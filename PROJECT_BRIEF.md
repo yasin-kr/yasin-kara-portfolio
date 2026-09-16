@@ -55,10 +55,34 @@ JavaScript ekip projesi; Team Lead. Vite, Axios ve TMDB kullanıldı. Weekly Tre
 - Doğrulanmış profil, proje, teknoloji ve gezinme verileri merkezi TypeScript katmanına aktarıldı.
 - İletişim, proje bağlantıları ve gerçek ekran görüntüleri için isteğe bağlı alanlar tanımlandı.
 - Kurulum, içerik düzenleme ve çalışma kuralları belgelendi.
+- React + TypeScript + Vite ile çalışan İngilizce tek sayfa tamamlandı: Header, Hero, Selected Work, About, Technical Toolkit, Contact ve Footer.
+- Antrasit zemin, şampanya vurguları, yerel Manrope/Cormorant Garamond fontları ve responsive editoryal düzen uygulandı.
+- TaskPro, Money Guard ve Cinemania için üç farklı tipografik kapak hazırlandı. Kapak yazıları `coverTitle` alanından yönetilir; gerçek `image` eklendiğinde kapak yerini görsele bırakır.
+- Money Guard ve Cinemania katkıları, klavyeyle kullanılabilen yerel `details` / `summary` öğeleriyle sunuldu.
+- Mobil menü, Escape ile kapanma ve odağı geri getirme, bölüm bağlantıları, içeriğe atlama bağlantısı ve azaltılmış hareket desteği tamamlandı.
+- İletişim ve proje adresleri için biçim doğrulaması eklendi. Eksik/geçersiz bağlantılar görünmez; adresin erişilebilirliği gerçek içerik eklenince ayrıca kontrol edilmelidir.
+- Sayfa başlığı, açıklaması ve YK favicon eklendi. Canonical veya sosyal paylaşım adresi uydurulmadı.
 
 ## Uygulama ve kontrol durumu
 
-Bu bölüm, ana uygulama tamamlandıktan sonra gerçek sonuçlarla güncellenecek. Henüz doğrulanmış build, lint, typecheck veya tarayıcı kontrol sonucu kaydedilmedi.
+Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Playwright ve axe-core ile yapıldı. Test araçları uygulama bağımlılıklarına eklenmedi; `.verification/` altında tutulur ve Git/ESLint kapsamı dışındadır.
+
+- 1440 × 1000 masaüstü, 768 × 1024 tablet, 390 × 844 telefon ve 320 × 740 küçük telefon boyutlarında yatay taşma bulunmadı.
+- Masaüstü, tablet ve telefon ekran görüntüleri görsel olarak incelendi; hizalama ve metin kesilmesi sorunu görülmedi.
+- Mobil menünün Enter ile açılması, Tab sırası, Escape ile kapanıp odağı düğmeye geri vermesi ve üç bölüm bağlantısının menüyü kapatarak hedefi göstermesi geçti.
+- Her iki proje ayrıntısının Enter ile açılması ve Space ile kapanması geçti.
+- İç bağlantı hedefleri ve tek h1 kontrolü geçti. Testlerde tarayıcı konsol hatası veya başarısız kaynak isteği bulunmadı.
+- `prefers-reduced-motion` altında animasyon/geçişlerin kapandığı ve kaydırmanın `auto` olduğu doğrulandı.
+- Masaüstü, telefon ve açık mobil menüde axe WCAG 2/2.1 A/AA taraması ihlal bildirmedi. Bu otomatik tarama, kapsamlı manuel erişilebilirlik denetimi veya farklı tarayıcı garantisi değildir.
+- Yerel rapor: `.verification/report.json` — 28 kontrol başarılı. Ekran görüntüleri aynı dizinde tutulur.
+
+16 Eylül 2026 kapanış kontrolleri:
+
+- `npm.cmd run build`: başarılı; TypeScript ve Vite üretim derlemesi tamamlandı.
+- `npm.cmd run lint`: başarılı; sıfır uyarı koşulu sağlandı.
+- `npm.cmd run typecheck`: başarılı.
+
+Önizleme: `npm.cmd run dev` → `http://127.0.0.1:5173/`. Windows PowerShell'de npm yürütme ilkesi hatası yaşanırsa `npm` yerine `npm.cmd` kullanılır. Üretim dosyaları `npm.cmd run build` ile `dist/` içine yazılır.
 
 ## Kullanıcıdan beklenen içerikler
 
@@ -73,8 +97,6 @@ Eksik içerikler ilk tasarımın geliştirilmesini engellemez. Yaş, maaş, öze
 
 ## Sıradaki işler
 
-- Uygulamanın çalışan ilk sürümünü tamamlamak ve masaüstü/mobil görünümünü incelemek.
-- Build, lint ve typecheck sonuçlarını bu dosyaya kaydetmek.
 - Kullanıcının tasarım revizesini değerlendirmek.
 - Gerçek bağlantı ve ekran görüntülerini sağlandıkça merkezi veriye eklemek; erişilebilirlik ve yükleme davranışını yeniden kontrol etmek.
 - Gerçek alan adı ve yayın ortamı belli olduğunda ilgili metadata ve dağıtım ayarlarını tamamlamak.

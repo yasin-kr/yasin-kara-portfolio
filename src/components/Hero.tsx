@@ -1,15 +1,16 @@
-import { profile } from "../data/portfolio";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
 
 export function Hero() {
+  const { profile, t, textDirection } = useLanguage();
   const [firstName, ...lastName] = profile.name.split(" ");
   return (
     <section id="home" className="hero page-width" aria-labelledby="hero-title">
       <div className="hero-eyebrow">
-        <span className="eyebrow">A developer’s perspective</span>
+        <span className="eyebrow" dir={textDirection}>{t.ui.heroEyebrow}</span>
         <span className="availability">
           <span aria-hidden="true" />
-          {profile.availability}
+          <span dir={textDirection}>{profile.availability}</span>
         </span>
       </div>
       <h1 id="hero-title" className="hero-name">
@@ -23,28 +24,28 @@ export function Hero() {
         <div className="hero-role">
           <span className="role-line" aria-hidden="true" />
           <div>
-            <p>{profile.role}</p>
-            <span>{profile.location}</span>
+            <p dir={textDirection}>{profile.role}</p>
+            <span dir={textDirection}>{profile.location}</span>
           </div>
         </div>
         <div className="hero-description">
-          <p>{profile.intro}</p>
+          <p dir={textDirection}>{profile.intro}</p>
           <div className="hero-actions">
             <a href="#work" className="button button--primary">
-              View selected work
+              <span dir={textDirection}>{t.ui.viewWork}</span>
               <Arrow direction="down" />
             </a>
             <a href="#contact" className="text-link">
-              Get in touch
+              <span dir={textDirection}>{t.ui.getInTouch}</span>
               <Arrow />
             </a>
           </div>
         </div>
       </div>
       <div className="hero-bottom">
-        <span className="eyebrow">Engineering roots. A new direction.</span>
+        <span className="eyebrow" dir={textDirection}>{t.ui.heroFootnote}</span>
         <a href="#work" className="scroll-link">
-          Explore below
+          <span dir={textDirection}>{t.ui.exploreBelow}</span>
           <Arrow direction="down" />
         </a>
       </div>

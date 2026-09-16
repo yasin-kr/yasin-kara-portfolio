@@ -1,0 +1,129 @@
+/* The language control stays in the upper-right corner at every breakpoint. */
+.header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: 32px;
+}
+
+.header > .navigation {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.header-actions {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.language-selector { position: relative; z-index: 10; }
+.language-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 10px 0 10px 17px;
+  border: 0;
+  border-left: 1px solid var(--color-line);
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: .04em;
+  color: var(--color-text);
+}
+.language-trigger:hover { color: var(--color-accent); }
+.language-flag { width: 21px; height: 14px; object-fit: cover; flex-shrink: 0; border-radius: 1px; }
+.language-chevron { transition: transform var(--motion); }
+.language-trigger[aria-expanded="true"] .language-chevron { transform: rotate(180deg); }
+.language-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 186px;
+  padding: 6px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 20%);
+}
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 12px;
+  text-align: left;
+}
+.language-option:hover, .language-option:focus-visible { background: #30312b; outline-offset: -2px; }
+.language-option[aria-checked="true"] { color: var(--color-accent); }
+.language-check { width: 14px; margin-left: auto; font-size: 12px; }
+
+/* Longer translations can wrap naturally without changing the column order. */
+.hero-description, .project-info, .about-heading, .about-story,
+.toolkit-intro, .toolkit-groups, .contact-layout > div,
+.section-heading > div { min-width: 0; }
+h2, .button, .eyebrow, .contact-email { overflow-wrap: anywhere; }
+.hero-actions .button { max-width: 100%; }
+.contribution ul { padding-inline-start: 15px; padding-inline-end: 0; }
+
+/* Arabic changes text direction, never the page grid, artwork, or control order. */
+html[lang="ar"] [dir="rtl"], .language-option [lang="ar"] {
+  font-family: Tahoma, Arial, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+}
+html[lang="ar"] [dir="rtl"] em {
+  font-family: inherit;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: normal;
+}
+html[lang="ar"] h2 { line-height: 1.5; }
+html[lang="ar"] .hero-description > p { line-height: 1.9; }
+html[lang="ar"] .eyebrow { font-size: 12px; }
+html[lang="ar"] .project-summary,
+html[lang="ar"] .about-story > p,
+html[lang="ar"] .contact-description > p { line-height: 2; }
+html[lang="ar"] .availability { font-size: 12px; }
+html[lang="ar"] .section-note { font-size: 13px; }
+html[lang="ar"] .contact-location { font-size: 12px; }
+html[lang="ar"] .project-number { direction: ltr; }
+html[lang="ar"] .contact h2 { font-size: clamp(60px, 7vw, 98px); }
+html[lang="ru"] .contact h2 { font-size: clamp(48px, 5vw, 72px); }
+
+@media (max-width: 1000px) {
+  .header { column-gap: 22px; }
+  .navigation { gap: 22px; }
+  html:not([lang="en"]) .contact h2 { font-size: clamp(48px, 6vw, 74px); }
+}
+
+@media (max-width: 700px) {
+  .header { grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; }
+  .header-actions { grid-column: 2; gap: 14px; }
+  .header > .navigation { grid-column: 1 / -1; grid-row: 2; justify-self: stretch; }
+  .language-trigger { padding-left: 13px; gap: 7px; font-size: 10px; }
+  .menu-toggle { padding-left: 0; gap: 10px; }
+  .language-menu { top: calc(100% + 9px); }
+  html:not([lang="en"]) .contact h2 { font-size: clamp(42px, 11vw, 72px); }
+  html[lang="ru"] .contact h2 { font-size: clamp(34px, 8.5vw, 58px); }
+  html[lang="ar"] .contact h2 { font-size: clamp(56px, 14vw, 84px); }
+  html[lang="ar"] .eyebrow { font-size: 10px; }
+  html[lang="ar"] .availability { font-size: 10px; }
+  html[lang="ar"] .hero-eyebrow > .eyebrow { max-width: 110px; }
+  html[lang="ar"] .contact-top .availability { max-width: 140px; font-size: 10px; }
+}
+
+@media (max-width: 420px) {
+  .mobile-menu-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .menu-toggle { min-width: 32px; justify-content: center; }
+  html:not([lang="en"]) .hero-description { padding-left: 0; }
+  html:not([lang="en"]) #work-title { font-size: 38px; }
+  html:not([lang="en"]) .toolkit h2 { font-size: 34px; }
+}

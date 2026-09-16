@@ -5,12 +5,14 @@ import { About } from "./components/About";
 import { Toolkit } from "./components/Toolkit";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { useLanguage } from "./i18n/LanguageContext";
 
 export default function App() {
+  const { t, textDirection } = useLanguage();
   return (
     <>
-      <a className="skip-link" href="#main">
-        Skip to content
+      <a className="skip-link" href="#main" dir={textDirection}>
+        {t.ui.skipToContent}
       </a>
       <Header />
       <main id="main" tabIndex={-1}>

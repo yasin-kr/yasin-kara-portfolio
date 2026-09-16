@@ -1,6 +1,7 @@
-import { profile } from "../data/portfolio";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export function About() {
+  const { profile, t, textDirection } = useLanguage();
   return (
     <section
       id="about"
@@ -10,36 +11,34 @@ export function About() {
     >
       <div className="page-width about-layout">
         <div className="about-heading">
-          <p className="eyebrow section-index">02 / A LITTLE ABOUT ME</p>
-          <h2 id="about-title">
-            A different path.
+          <p className="eyebrow section-index" dir={textDirection}>{t.ui.aboutIndex}</p>
+          <h2 id="about-title" dir={textDirection}>
+            {t.ui.aboutTitle[0]}
             <br />
-            <em>The same curiosity.</em>
+            <em>{t.ui.aboutTitle[1]}</em>
           </h2>
           <div className="about-mark" aria-hidden="true">
             <span>y</span>
             <em>k</em>
             <span className="about-mark-dot">.</span>
           </div>
-          <p className="about-caption">ENGINEERING → DEVELOPMENT</p>
+          <p className="about-caption" dir={textDirection}>{t.ui.aboutCaption}</p>
         </div>
         <div className="about-story">
-          <p className="story-lead">
-            From coordinating operations
-            <br className="desktop-break" /> to connecting the pieces of the
-            web.
+          <p className="story-lead" dir={textDirection}>
+            {t.ui.storyLead}
           </p>
           {profile.about.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p key={paragraph} dir={textDirection}>{paragraph}</p>
           ))}
           <div className="education">
             <span className="education-symbol" aria-hidden="true">
               ↗
             </span>
             <div>
-              <span className="eyebrow">THE NEXT CHAPTER</span>
-              <h3>{profile.education.name}</h3>
-              <p>{profile.education.completed}</p>
+              <span className="eyebrow" dir={textDirection}>{t.ui.nextChapter}</span>
+              <h3 dir="auto">{profile.education.name}</h3>
+              <p dir={textDirection}>{profile.education.completed}</p>
             </div>
           </div>
         </div>

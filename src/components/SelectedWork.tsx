@@ -1,8 +1,10 @@
-import { projects, type Project } from "../data/portfolio";
+import type { Project } from "../data/portfolio";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
 import { isWebUrl } from "../utils/links";
 
 function ProjectCover({ project }: { project: Project }) {
+  const { t, textDirection } = useLanguage();
   const [primaryTitle, secondaryTitle] = project.coverTitle ?? [project.name];
   if (project.image) {
     return (
@@ -23,10 +25,10 @@ function ProjectCover({ project }: { project: Project }) {
     <div
       className={`project-cover project-cover--${project.cover}`}
       role="img"
-      aria-label={`${project.name} typographic project cover`}
+      aria-label={t.ui.coverDescription.replace("{name}", project.name)}
     >
       <div className="cover-top" aria-hidden="true">
-        <span>YK / SELECTED WORK</span>
+        <span dir={textDirection}>{t.ui.coverSelectedWork}</span>
         <span>{project.number}</span>
       </div>
       <div className="cover-art" aria-hidden="true">
@@ -68,7 +70,7 @@ function ProjectCover({ project }: { project: Project }) {
         )}
       </div>
       <div className="cover-bottom" aria-hidden="true">
-        <span>PROJECT COVER</span>
+        <span dir={textDirection}>{t.ui.projectCover}</span>
         <span>{project.name}</span>
       </div>
     </div>
@@ -76,6 +78,7 @@ function ProjectCover({ project }: { project: Project }) {
 }
 
 function ProjectArticle({ project }: { project: Project }) {
+  const { t, textDirection } = useLanguage();
   const hasRepository = isWebUrl(project.repositoryUrl);
   const hasLiveSite = isWebUrl(project.liveUrl);
   return (
@@ -84,14 +87,14 @@ function ProjectArticle({ project }: { project: Project }) {
       <div className="project-info">
         <div className="project-meta">
           <span className="project-number">/{project.number}</span>
-          <span className="eyebrow">{project.role}</span>
+          <span className="eyebrow" dir={textDirection}>{project.role}</span>
         </div>
         <h3 id={`${project.id}-title`}>{project.name}</h3>
-        <p className="project-summary">{project.summary}</p>
+        <p className="project-summary" dir={textDirection}>{project.summary}</p>
         {project.technologies.length > 0 && (
           <ul
             className="technology-list"
-            aria-label={`${project.name} technologies`}
+            aria-label={t.ui.projectTechnologies.replace("{name}", project.name)}
           >
             {project.technologies.map((technology) => (
               <li key={technology}>{technology}</li>
@@ -101,10 +104,10 @@ function ProjectArticle({ project }: { project: Project }) {
         {project.contributions.length > 0 && (
           <details className="contribution">
             <summary>
-              My contribution
+              <span dir={textDirection}>{t.ui.contribution}</span>
               <span className="details-icon" aria-hidden="true" />
             </summary>
-            <ul>
+            <ul dir={textDirection}>
               {project.contributions.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -120,7 +123,7 @@ function ProjectArticle({ project }: { project: Project }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Live site
+                <span dir={textDirection}>{t.ui.liveSite}</span>
                 <Arrow />
               </a>
             )}
@@ -143,6 +146,7 @@ function ProjectArticle({ project }: { project: Project }) {
 }
 
 export function SelectedWork() {
+  const { projects, t, textDirection } = useLanguage();
   return (
     <section
       id="work"
@@ -152,14 +156,13 @@ export function SelectedWork() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-index">01 / THE WORK</p>
-          <h2 id="work-title">
-            Selected <em>work.</em>
+          <p className="eyebrow section-index" dir={textDirection}>{t.ui.workIndex}</p>
+          <h2 id="work-title" dir={textDirection}>
+            {t.ui.workTitle[0]} <em>{t.ui.workTitle[1]}</em>
           </h2>
         </div>
-        <p className="section-note">
-          Different projects.
-          <br />A shared commitment to learning by building.
+        <p className="section-note" dir={textDirection}>
+          {t.ui.workNote}
         </p>
       </div>
       <div className="project-list">

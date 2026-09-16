@@ -213,7 +213,7 @@ h2 em {
   font-size: 11px;
   line-height: 1.5;
 }
-.availability > span {
+.availability > span[aria-hidden] {
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -643,7 +643,7 @@ h2 em {
   line-height: 1.2;
 }
 .about h2 em {
-  white-space: nowrap;
+  white-space: normal;
 }
 .about-mark {
   display: flex;

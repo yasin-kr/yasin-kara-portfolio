@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { navigation, profile } from "../data/portfolio";
+import { useLanguage } from "../i18n/LanguageContext";
+import { LanguageSelector } from "./LanguageSelector";
 
 export function Header() {
+  const { navigation, profile, t, textDirection } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -30,13 +32,13 @@ export function Header() {
       <a
         href="#home"
         className="wordmark"
-        aria-label={`${profile.name}, home`}
+        aria-label={`${profile.name}, ${t.ui.home}`}
         onClick={() => setIsOpen(false)}
       >
         {profile.name.toLocaleLowerCase("en")}
         <span className="wordmark-dot">.</span>
       </a>
-      <button
+      <div className="header-actions"><button
         ref={buttonRef}
         type="button"
         className="menu-toggle"
@@ -44,7 +46,7 @@ export function Header() {
         aria-controls="primary-navigation"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? "Close" : "Menu"}
+        <span className="mobile-menu-label" dir={textDirection}>{isOpen ? t.ui.close : t.ui.menu}</span>
         <span
           className={`menu-icon ${isOpen ? "is-open" : ""}`}
           aria-hidden="true"
@@ -52,18 +54,18 @@ export function Header() {
           <span />
           <span />
         </span>
-      </button>
+      </button><LanguageSelector onOpen={() => setIsOpen(false)} /></div>
       <nav
         id="primary-navigation"
         className={`navigation ${isOpen ? "navigation--open" : ""}`}
-        aria-label="Main navigation"
+        aria-label={t.ui.mainNavigation}
       >
         {navigation.map((item, index) => (
           <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
             <span className="nav-number" aria-hidden="true">
               0{index + 1}
             </span>
-            {item.label}
+            <span dir={textDirection}>{item.label}</span>
           </a>
         ))}
       </nav>

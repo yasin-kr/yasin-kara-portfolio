@@ -1,8 +1,9 @@
-import { profile } from "../data/portfolio";
+import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
 import { isCvUrl, isEmail, isWebUrl } from "../utils/links";
 
 export function Contact() {
+  const { profile, t, textDirection } = useLanguage();
   const { contact } = profile;
   const links = [
     {
@@ -13,7 +14,7 @@ export function Contact() {
       label: "LinkedIn",
       href: isWebUrl(contact.linkedin) ? contact.linkedin : undefined,
     },
-    { label: "View CV", href: isCvUrl(contact.cv) ? contact.cv : undefined },
+    { label: t.ui.viewCv, href: isCvUrl(contact.cv) ? contact.cv : undefined },
   ].filter((link): link is { label: string; href: string } =>
     Boolean(link.href),
   );
@@ -26,18 +27,18 @@ export function Contact() {
       tabIndex={-1}
     >
       <div className="contact-top">
-        <p className="eyebrow section-index">03 / WHAT’S NEXT</p>
+        <p className="eyebrow section-index" dir={textDirection}>{t.ui.contactIndex}</p>
         <span className="availability">
           <span aria-hidden="true" />
-          {profile.availability}
+          <span dir={textDirection}>{profile.availability}</span>
         </span>
       </div>
       <div className="contact-layout">
         <div>
-          <h2 id="contact-title">
-            Let’s work
+          <h2 id="contact-title" dir={textDirection}>
+            {t.ui.contactTitle[0]}
             <br />
-            <em>together.</em>
+            <em>{t.ui.contactTitle[1]}</em>
           </h2>
           {isEmail(contact.email) && (
             <a className="contact-email" href={`mailto:${contact.email}`}>
@@ -50,8 +51,8 @@ export function Contact() {
           <span className="contact-asterisk" aria-hidden="true">
             ✳
           </span>
-          <p>{profile.contactIntro}</p>
-          <span className="contact-location">Based in {profile.location}</span>
+          <p dir={textDirection}>{profile.contactIntro}</p>
+          <span className="contact-location" dir={textDirection}>{t.ui.basedIn.replace("{location}", profile.location)}</span>
           {links.length > 0 && (
             <div className="contact-links">
               {links.map((link) => (
@@ -62,7 +63,7 @@ export function Contact() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {link.label}
+                  <span dir="auto">{link.label}</span>
                   <Arrow />
                 </a>
               ))}
