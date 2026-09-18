@@ -4,8 +4,7 @@ const es: Translation = {
   profile: {
     role: "Desarrollador full stack",
     location: "Kütahya, Turquía",
-    intro:
-      "Creo experiencias web cuidadas con React, TypeScript y Node.js.",
+    intro: "Creo experiencias web cuidadas con React, TypeScript y Node.js.",
     availability: "Abierto a oportunidades de desarrollo",
     contactIntro:
       "Busco un puesto de desarrollo en el que pueda aportar, seguir aprendiendo y crear en equipo.",
@@ -26,7 +25,8 @@ const es: Translation = {
     },
     "money-guard": {
       role: "Líder de equipo",
-      summary: "Un proyecto de React y Redux desarrollado por un equipo de siete personas.",
+      summary:
+        "Un proyecto de React y Redux desarrollado por un equipo de siete personas.",
       contributions: [
         "Lideré un equipo de siete personas y trabajé en la gestión del estado con Redux Toolkit y en la persistencia de tokens.",
         "Me encargué del cliente de la API, la autenticación y los datos de transacciones, categorías, estadísticas y divisas.",
@@ -34,14 +34,15 @@ const es: Translation = {
     },
     cinemania: {
       role: "Líder de equipo",
-      summary: "Un proyecto en equipo de JavaScript creado con Vite, Axios y TMDB.",
+      summary:
+        "Un proyecto en equipo de JavaScript creado con Vite, Axios y TMDB.",
       contributions: [
         "Lideré el equipo y trabajé en la sección de tendencias semanales, la ventana modal de detalles de películas y las mejoras de la interfaz.",
         "Realicé mejoras de rendimiento en todo el proyecto.",
       ],
     },
   },
-  navigation: { work: "Proyectos", about: "Sobre mí", contact: "Contacto" },
+  navigation: { work: "Mis proyectos", about: "Sobre mí", contact: "Contacto" },
   toolkit: {
     frontend: "Interfaz",
     backend: "Servidor",
@@ -77,7 +78,8 @@ const es: Translation = {
     nextChapter: "EL SIGUIENTE CAPÍTULO",
     toolkitIndex: "LAS HERRAMIENTAS QUE UTILIZO",
     toolkitTitle: ["Herramientas", "técnicas."],
-    toolkitNote: "Experiencia práctica adquirida a través de proyectos. Siempre en crecimiento.",
+    toolkitNote:
+      "Experiencia práctica adquirida a través de proyectos. Siempre en crecimiento.",
     contactIndex: "03 / EL PRÓXIMO PASO",
     contactTitle: ["Trabajemos", "juntos."],
     basedIn: "Ubicación: {location}",

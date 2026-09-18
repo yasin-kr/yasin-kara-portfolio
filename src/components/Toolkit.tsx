@@ -8,13 +8,13 @@ export function Toolkit() {
       aria-labelledby="toolkit-title"
     >
       <div className="toolkit-intro">
-        <p className="eyebrow section-index" dir={textDirection}>{t.ui.toolkitIndex}</p>
+        <p className="eyebrow section-index" dir={textDirection}>
+          {t.ui.toolkitIndex}
+        </p>
         <h2 id="toolkit-title" dir={textDirection}>
           {t.ui.toolkitTitle[0]} <em>{t.ui.toolkitTitle[1]}</em>
         </h2>
-        <p dir={textDirection}>
-          {t.ui.toolkitNote}
-        </p>
+        <p dir={textDirection}>{t.ui.toolkitNote}</p>
       </div>
       <div className="toolkit-groups">
         {toolkit.map((group, index) => (
@@ -25,7 +25,9 @@ export function Toolkit() {
             </div>
             <ul>
               {group.items.map((item) => (
-                <li key={item} dir="auto">{item}</li>
+                <li key={item} dir="auto">
+                  {item}
+                </li>
               ))}
             </ul>
           </div>

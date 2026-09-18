@@ -2,7 +2,7 @@
 
 ## Amaç
 
-İş başvurularında ve profesyonel profillerde paylaşılacak, özenli ve anlaşılır bir İngilizce geliştirici portfolyosu. Tek sayfa; Work, About, Technical Toolkit ve Contact bölümleri. Kullanıcıyla iletişim Türkçe.
+İş başvurularında ve profesyonel profillerde paylaşılacak, özenli ve anlaşılır bir geliştirici portfolyosu. Varsayılan dil İngilizce; Türkçe, İspanyolca, Arapça, Rusça ve Almanca da desteklenir. Tek sayfa; projeler, hakkında, teknik araçlar ve iletişim bölümleri. Kullanıcıyla iletişim Türkçe.
 
 ## Doğrulanmış profil
 
@@ -83,6 +83,21 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 - `npm.cmd run typecheck`: başarılı.
 
 Önizleme: `npm.cmd run dev` → `http://127.0.0.1:5173/`. Windows PowerShell'de npm yürütme ilkesi hatası yaşanırsa `npm` yerine `npm.cmd` kullanılır. Üretim dosyaları `npm.cmd run build` ile `dist/` içine yazılır.
+
+## 18 Eylül 2026 — Dil desteği ve header revizesi
+
+- Sağ üste yerel SVG bayrakları ve dilin kendi adını gösteren küçük bir açılır dil menüsü eklendi.
+- Altı dil için profil, proje katkıları, gezinme, bölüm başlıkları, erişilebilirlik metinleri ve sayfa metadata çevirileri hazırlandı. Özel adlar ve teknik ürün adları korunur.
+- Varsayılan İngilizce; seçilen dil `yasin-kara-language` anahtarında tutulur. Geçersiz kayıt ve engellenmiş localStorage güvenli biçimde ele alınır.
+- Arapçada genel sayfa yönü/sütun sırası değişmez; metin blokları RTL okunur. Rusça için Cormorant Garamond Kiril karakterleri eklendi.
+- Ortak veriler `src/data/portfolio.ts`, çeviriler `src/i18n/locales/`, dil ve responsive ek stilleri `src/i18n/language.css` üzerinden yönetilir.
+- Header logosu yalnızca `YK` yapıldı. Gezinme bağlantılarının başındaki sayılar kaldırıldı. Proje bağlantısı Türkçede `Projelerim`, İngilizcede `My projects` ve diğer dillerde karşılığı olacak şekilde güncellendi.
+- `npm.cmd run build`, `npm.cmd run lint` ve `npm.cmd run typecheck` başarılı.
+- Altı dil × dört ekran boyutunda (1440, 768, 390 ve 320 px genişlik) yerel Chrome testleri tamamlandı: 24 senaryo, 351 kontrol başarılı. Yatay taşma veya ana metinlerde kesilme bulunmadı.
+- Dil seçimi, yenilemede kalıcılık, İngilizce varsayılan, geçersiz kayıt, engellenmiş localStorage, klavye/dışarı tıklama davranışı ve çevrilmiş mobil menü doğrulandı.
+- Arapça metinlerin RTL, sayfa düzeninin LTR kaldığı doğrulandı. Arapça, Rusça ve Almanca masaüstü/mobil ekran görüntüleri incelendi.
+- Masaüstü ve telefonda tüm diller için axe WCAG A/AA taramaları ihlal bildirmedi; tarayıcı hatası veya başarısız kaynak isteği görülmedi. Otomatik tarama kapsamlı manuel erişilebilirlik denetiminin yerine geçmez.
+- Yerel test raporu `.verification/language-report.json`; test betiği `.verification/verify-languages.mjs`. Bu yerel araçlar Git kapsamı dışındadır.
 
 ## Kullanıcıdan beklenen içerikler
 

@@ -21,12 +21,14 @@ const de: Translation = {
   projects: {
     taskpro: {
       role: "Full-Stack-Entwickler",
-      summary: "Ein Projekt, an dem ich als Full-Stack-Entwickler mitgewirkt habe.",
+      summary:
+        "Ein Projekt, an dem ich als Full-Stack-Entwickler mitgewirkt habe.",
       contributions: [],
     },
     "money-guard": {
       role: "Teamleitung",
-      summary: "Ein React- und Redux-Projekt, entwickelt von einem siebenköpfigen Team.",
+      summary:
+        "Ein React- und Redux-Projekt, entwickelt von einem siebenköpfigen Team.",
       contributions: [
         "Ich leitete ein siebenköpfiges Team und arbeitete an der Zustandsverwaltung mit Redux Toolkit sowie an der dauerhaften Speicherung von Tokens.",
         "Ich war für den API-Client, die Authentifizierung sowie Transaktions-, Kategorie-, Statistik- und Währungsdaten zuständig.",
@@ -34,14 +36,19 @@ const de: Translation = {
     },
     cinemania: {
       role: "Teamleitung",
-      summary: "Ein JavaScript-Teamprojekt, umgesetzt mit Vite, Axios und TMDB.",
+      summary:
+        "Ein JavaScript-Teamprojekt, umgesetzt mit Vite, Axios und TMDB.",
       contributions: [
         "Ich leitete das Team und arbeitete an den wöchentlichen Trends, dem Dialogfenster für Filmdetails und Verbesserungen der Benutzeroberfläche.",
         "Ich nahm im gesamten Projekt Leistungsverbesserungen vor.",
       ],
     },
   },
-  navigation: { work: "Projekte", about: "Über mich", contact: "Kontakt" },
+  navigation: {
+    work: "Meine Projekte",
+    about: "Über mich",
+    contact: "Kontakt",
+  },
   toolkit: {
     frontend: "Benutzeroberfläche",
     backend: "Server",
@@ -63,7 +70,8 @@ const de: Translation = {
     exploreBelow: "Weiter entdecken",
     workIndex: "01 / DIE PROJEKTE",
     workTitle: ["Ausgewählte", "Projekte."],
-    workNote: "Verschiedene Projekte. Derselbe Anspruch, durch Praxis zu lernen.",
+    workNote:
+      "Verschiedene Projekte. Derselbe Anspruch, durch Praxis zu lernen.",
     coverSelectedWork: "YK / AUSGEWÄHLTE PROJEKTE",
     projectCover: "PROJEKTCOVER",
     coverDescription: "Typografisches Projektcover für {name}",
@@ -73,7 +81,8 @@ const de: Translation = {
     aboutIndex: "02 / EIN WENIG ÜBER MICH",
     aboutTitle: ["Ein anderer Weg.", "Dieselbe Neugier."],
     aboutCaption: "INGENIEURWESEN → SOFTWAREENTWICKLUNG",
-    storyLead: "Von der Koordination von Abläufen zum Verbinden der Bausteine des Webs.",
+    storyLead:
+      "Von der Koordination von Abläufen zum Verbinden der Bausteine des Webs.",
     nextChapter: "DAS NÄCHSTE KAPITEL",
     toolkitIndex: "DIE WERKZEUGE, MIT DENEN ICH ARBEITE",
     toolkitTitle: ["Technische", "Werkzeuge."],

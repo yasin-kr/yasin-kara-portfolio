@@ -17,6 +17,7 @@ export const LanguageContext = createContext<LanguageState | null>(null);
 
 export function useLanguage() {
   const value = useContext(LanguageContext);
-  if (!value) throw new Error("useLanguage must be used within LanguageProvider");
+  if (!value)
+    throw new Error("useLanguage must be used within LanguageProvider");
   return value;
 }

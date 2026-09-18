@@ -1,6 +1,6 @@
 # Yasin Kara Portfolio
 
-Yasin Kara'nın projelerini, teknik çalışmalarını ve mühendislikten yazılıma geçişini sunan İngilizce, tek sayfalık geliştirici portfolyosu.
+Yasin Kara'nın projelerini, teknik çalışmalarını ve mühendislikten yazılıma geçişini sunan, altı dil destekli tek sayfalık geliştirici portfolyosu. Varsayılan dil İngilizcedir.
 
 ## Kurulum ve çalıştırma
 
@@ -43,6 +43,22 @@ Profil, proje, teknoloji ve gezinme verilerinin merkezi `src/data/portfolio.ts` 
 - `toolkit`: Frontend, Backend ve Tools grupları.
 - `navigation`: bölüm bağlantıları.
 
+## Dil desteği
+
+Sağ üstteki bayraklı menüden İngilizce, Türkçe, İspanyolca, Arapça, Rusça veya Almanca seçilebilir. İlk ziyarette tarayıcı dilinden bağımsız olarak İngilizce açılır. Seçim `yasin-kara-language` localStorage anahtarında saklanır ve yenilemede korunur. Kayıt geçersizse İngilizceye dönülür; depolama engelliyse seçim açık oturum boyunca çalışır.
+
+- `src/i18n/locales/en.ts`, ortak İngilizce profil ve proje içeriklerini `src/data/portfolio.ts` dosyasından alır.
+- Diğer dillerin profil, proje ve arayüz çevirileri `src/i18n/locales/{tr,es,ar,ru,de}.ts` dosyalarındadır. İçerik değişikliklerinde tüm dil dosyalarını güncelleyin.
+- `src/i18n/types.ts`, her dilde gereken alanları tanımlar; `{name}` ve `{location}` yer tutucularını koruyun.
+- `LanguageProvider`, seçimi, çevrilmiş içerikleri, HTML `lang` bilgisini ve sayfa başlığı/açıklamasını yönetir. Görünür gezinme etiketleri çeviri dosyalarındadır.
+- Arapçada genel düzen ve sütun sırası LTR kalır; yalnızca metin blokları RTL olur. Arapça metinlerde sistemin Tahoma/Arial desteği, Rusça editoryal başlıklarda yerel Kiril fontları kullanılır.
+- Bayraklar yerel SVG dosyalarıdır: İngilizce için Birleşik Krallık, Türkçe için Türkiye, İspanyolca için İspanya, Arapça için BAE, Rusça için Rusya, Almanca için Almanya. Seçenekler dilin kendi adıyla da gösterilir.
+- Dil menüsü ok tuşları, Home/End, Enter/Space, Tab ve Escape ile kullanılabilir; dışarı tıklayınca kapanır.
+
+Header logosu `YK` monogramıdır. Menüde sıra numarası yoktur; ilk bağlantı Türkçede **Projelerim**, İngilizcede **My projects** olarak görünür.
+
+## Bağlantı ve görselleri ekleme
+
 İletişim alanları gerçek bilgi sağlanana kadar boş bırakılmıştır. E-posta adresini düz metin olarak, sosyal bağlantıları geçerli tam HTTPS adresleriyle girin. CV için gerçek bir dosya yolu veya erişilebilir HTTPS adresi kullanın. Yerel dosya `public/` altında tutulabilir; örneğin gerçek dosya eklendiğinde `/yasin-kara-cv.pdf`.
 
 Projeler için `repositoryUrl` ve `liveUrl` isteğe bağlıdır. Yalnızca gerçek, geçerli adresleri ekleyin. Bir alanın bulunmaması bağlantının gösterilmemesini sağlar; `#` gibi işlevsiz adresler kullanmayın.
@@ -63,6 +79,7 @@ src/
   main.tsx             # React ve yerel fontların başlangıcı
   components/          # Header, Hero, SelectedWork, About, Toolkit, Contact, Footer
   data/portfolio.ts    # Düzenlenebilir profil ve proje içeriği
+  i18n/                # Altı dilin çevirileri, dil bağlamı ve dil stilleri
   utils/links.ts       # İsteğe bağlı bağlantıların biçim kontrolü
   styles.css           # Tasarım değişkenleri, bölümler, responsive kurallar
 public/favicon.svg     # YK site simgesi

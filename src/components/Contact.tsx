@@ -27,7 +27,9 @@ export function Contact() {
       tabIndex={-1}
     >
       <div className="contact-top">
-        <p className="eyebrow section-index" dir={textDirection}>{t.ui.contactIndex}</p>
+        <p className="eyebrow section-index" dir={textDirection}>
+          {t.ui.contactIndex}
+        </p>
         <span className="availability">
           <span aria-hidden="true" />
           <span dir={textDirection}>{profile.availability}</span>
@@ -52,7 +54,9 @@ export function Contact() {
             ✳
           </span>
           <p dir={textDirection}>{profile.contactIntro}</p>
-          <span className="contact-location" dir={textDirection}>{t.ui.basedIn.replace("{location}", profile.location)}</span>
+          <span className="contact-location" dir={textDirection}>
+            {t.ui.basedIn.replace("{location}", profile.location)}
+          </span>
           {links.length > 0 && (
             <div className="contact-links">
               {links.map((link) => (

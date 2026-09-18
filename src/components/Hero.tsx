@@ -7,7 +7,9 @@ export function Hero() {
   return (
     <section id="home" className="hero page-width" aria-labelledby="hero-title">
       <div className="hero-eyebrow">
-        <span className="eyebrow" dir={textDirection}>{t.ui.heroEyebrow}</span>
+        <span className="eyebrow" dir={textDirection}>
+          {t.ui.heroEyebrow}
+        </span>
         <span className="availability">
           <span aria-hidden="true" />
           <span dir={textDirection}>{profile.availability}</span>
@@ -43,7 +45,9 @@ export function Hero() {
         </div>
       </div>
       <div className="hero-bottom">
-        <span className="eyebrow" dir={textDirection}>{t.ui.heroFootnote}</span>
+        <span className="eyebrow" dir={textDirection}>
+          {t.ui.heroFootnote}
+        </span>
         <a href="#work" className="scroll-link">
           <span dir={textDirection}>{t.ui.exploreBelow}</span>
           <Arrow direction="down" />

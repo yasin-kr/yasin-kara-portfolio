@@ -127,7 +127,7 @@ export const toolkit: { name: string; items: string[] }[] = [
 ];
 
 export const navigation: { label: string; href: string }[] = [
-  { label: "Work", href: "#work" },
+  { label: "My projects", href: "#work" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

@@ -40,7 +40,7 @@ const ar: Translation = {
       ],
     },
   },
-  navigation: { work: "أعمالي", about: "عني", contact: "تواصل" },
+  navigation: { work: "مشاريعي", about: "عني", contact: "تواصل" },
   toolkit: {
     frontend: "الواجهات الأمامية",
     backend: "الواجهات الخلفية",

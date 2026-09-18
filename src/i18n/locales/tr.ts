@@ -34,14 +34,15 @@ const tr: Translation = {
     },
     cinemania: {
       role: "Ekip Lideri",
-      summary: "Vite, Axios ve TMDB kullanılarak geliştirilen bir JavaScript ekip projesi.",
+      summary:
+        "Vite, Axios ve TMDB kullanılarak geliştirilen bir JavaScript ekip projesi.",
       contributions: [
         "Ekibe liderlik ettim; haftanın trendleri bölümü, film detay penceresi ve arayüz iyileştirmeleri üzerinde çalıştım.",
         "Proje genelinde performans iyileştirmeleri yaptım.",
       ],
     },
   },
-  navigation: { work: "Projeler", about: "Hakkımda", contact: "İletişim" },
+  navigation: { work: "Projelerim", about: "Hakkımda", contact: "İletişim" },
   toolkit: {
     frontend: "Ön Yüz",
     backend: "Arka Uç",
@@ -73,11 +74,13 @@ const tr: Translation = {
     aboutIndex: "02 / KISACA BEN",
     aboutTitle: ["Farklı bir yol.", "Aynı merak."],
     aboutCaption: "MÜHENDİSLİKTEN → YAZILIMA",
-    storyLead: "Operasyonları koordine etmekten web’in parçalarını bir araya getirmeye.",
+    storyLead:
+      "Operasyonları koordine etmekten web’in parçalarını bir araya getirmeye.",
     nextChapter: "YENİ BİR SAYFA",
     toolkitIndex: "KULLANDIĞIM ARAÇLAR",
     toolkitTitle: ["Teknik", "beceriler."],
-    toolkitNote: "Projelerle kazandığım pratik deneyim. Her zaman üzerine yenisini ekliyorum.",
+    toolkitNote:
+      "Projelerle kazandığım pratik deneyim. Her zaman üzerine yenisini ekliyorum.",
     contactIndex: "03 / SIRADA NE VAR?",
     contactTitle: ["Birlikte", "çalışalım."],
     basedIn: "Konum: {location}",

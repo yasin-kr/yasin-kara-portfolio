@@ -6,4 +6,11 @@ import ru from "./locales/ru";
 import de from "./locales/de";
 import type { Locale, Translation } from "./types";
 
-export const translations: Record<Locale, Translation> = { en, tr, es, ar, ru, de };
+export const translations: Record<Locale, Translation> = {
+  en,
+  tr,
+  es,
+  ar,
+  ru,
+  de,
+};

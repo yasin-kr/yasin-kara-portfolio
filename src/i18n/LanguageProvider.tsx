@@ -14,7 +14,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.dir = "ltr";
     document.documentElement.dataset.locale = locale;
     document.title = `${profile.name} — ${t.profile.role}`;
-    document.querySelector('meta[name="description"]')?.setAttribute("content", t.ui.metaDescription);
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", t.ui.metaDescription);
     try {
       window.localStorage.setItem(STORAGE_KEY, locale);
     } catch {
@@ -24,7 +26,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const onStorage = (event: StorageEvent) => {
-      if (event.key === STORAGE_KEY && isLocale(event.newValue)) setLocale(event.newValue);
+      if (event.key === STORAGE_KEY && isLocale(event.newValue))
+        setLocale(event.newValue);
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
@@ -34,10 +37,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const value = {
     locale,
     setLocale,
-    textDirection: locale === "ar" ? "rtl" as const : "ltr" as const,
+    textDirection: locale === "ar" ? ("rtl" as const) : ("ltr" as const),
     t,
     profile: { ...profile, ...t.profile },
-    projects: projects.map((project) => ({ ...project, ...t.projects[project.id] })),
+    projects: projects.map((project) => ({
+      ...project,
+      ...t.projects[project.id],
+    })),
     navigation: [
       { label: t.navigation.work, href: "#work" },
       { label: t.navigation.about, href: "#about" },
@@ -45,9 +51,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     ],
     toolkit: toolkit.map((group, index) => ({
       name: groupNames[index],
-      items: group.items.map((item) => item === "Responsive design" ? t.toolkit.responsiveDesign : item),
+      items: group.items.map((item) =>
+        item === "Responsive design" ? t.toolkit.responsiveDesign : item,
+      ),
     })),
   };
 
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  );
 }

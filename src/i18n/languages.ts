@@ -4,7 +4,12 @@ export const STORAGE_KEY = "yasin-kara-language";
 export const DEFAULT_LOCALE: Locale = "en";
 
 // Flags are visual cues; native language names identify each option unambiguously.
-export const languages: { code: Locale; name: string; flag: string; direction: "ltr" | "rtl" }[] = [
+export const languages: {
+  code: Locale;
+  name: string;
+  flag: string;
+  direction: "ltr" | "rtl";
+}[] = [
   { code: "en", name: "English", flag: "gb", direction: "ltr" },
   { code: "tr", name: "Türkçe", flag: "tr", direction: "ltr" },
   { code: "es", name: "Español", flag: "es", direction: "ltr" },

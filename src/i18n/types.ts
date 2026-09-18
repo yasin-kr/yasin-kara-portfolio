@@ -3,10 +3,24 @@ import type { Profile, Project } from "../data/portfolio";
 export type Locale = "en" | "tr" | "es" | "ar" | "ru" | "de";
 
 export interface Translation {
-  profile: Pick<Profile, "role" | "location" | "intro" | "availability" | "contactIntro" | "about" | "education">;
+  profile: Pick<
+    Profile,
+    | "role"
+    | "location"
+    | "intro"
+    | "availability"
+    | "contactIntro"
+    | "about"
+    | "education"
+  >;
   projects: Record<string, Pick<Project, "role" | "summary" | "contributions">>;
   navigation: { work: string; about: string; contact: string };
-  toolkit: { frontend: string; backend: string; tools: string; responsiveDesign: string };
+  toolkit: {
+    frontend: string;
+    backend: string;
+    tools: string;
+    responsiveDesign: string;
+  };
   ui: {
     skipToContent: string;
     home: string;

@@ -87,14 +87,21 @@ function ProjectArticle({ project }: { project: Project }) {
       <div className="project-info">
         <div className="project-meta">
           <span className="project-number">/{project.number}</span>
-          <span className="eyebrow" dir={textDirection}>{project.role}</span>
+          <span className="eyebrow" dir={textDirection}>
+            {project.role}
+          </span>
         </div>
         <h3 id={`${project.id}-title`}>{project.name}</h3>
-        <p className="project-summary" dir={textDirection}>{project.summary}</p>
+        <p className="project-summary" dir={textDirection}>
+          {project.summary}
+        </p>
         {project.technologies.length > 0 && (
           <ul
             className="technology-list"
-            aria-label={t.ui.projectTechnologies.replace("{name}", project.name)}
+            aria-label={t.ui.projectTechnologies.replace(
+              "{name}",
+              project.name,
+            )}
           >
             {project.technologies.map((technology) => (
               <li key={technology}>{technology}</li>
@@ -156,7 +163,9 @@ export function SelectedWork() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-index" dir={textDirection}>{t.ui.workIndex}</p>
+          <p className="eyebrow section-index" dir={textDirection}>
+            {t.ui.workIndex}
+          </p>
           <h2 id="work-title" dir={textDirection}>
             {t.ui.workTitle[0]} <em>{t.ui.workTitle[1]}</em>
           </h2>
