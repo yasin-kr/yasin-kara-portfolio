@@ -99,6 +99,13 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 - Masaüstü ve telefonda tüm diller için axe WCAG A/AA taramaları ihlal bildirmedi; tarayıcı hatası veya başarısız kaynak isteği görülmedi. Otomatik tarama kapsamlı manuel erişilebilirlik denetiminin yerine geçmez.
 - Yerel test raporu `.verification/language-report.json`; test betiği `.verification/verify-languages.mjs`. Bu yerel araçlar Git kapsamı dışındadır.
 
+## 20 Eylül 2026 — Header hover efekti
+
+- YK logosu ve header bölüm bağlantılarına, metin genişliğinde soldan sağa açılan ince şampanya alt çizgi eklendi.
+- Logo hover ve klavye odağında şampanya rengine geçer. Aynı alt çizgi klavye odağında da görünür; mevcut azaltılmış hareket tercihi geçişi kapatır.
+- Çizgi mutlak konumlandırılır; yerleşimde kaymaya neden olmaz. Arapçada da animasyon başlangıcı soldadır.
+- Build, lint ve typecheck başarılı. Bu küçük stil değişikliği için tarayıcı test paketi yeniden çalıştırılmadı.
+
 ## Kullanıcıdan beklenen içerikler
 
 1. İletişim e-posta adresi; GitHub ve LinkedIn profil adresleri.

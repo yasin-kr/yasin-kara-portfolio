@@ -35,7 +35,7 @@ export function Header() {
         aria-label={`${profile.name}, ${t.ui.home}`}
         onClick={() => setIsOpen(false)}
       >
-        YK
+        <span className="header-link-label">YK</span>
       </a>
       <div className="header-actions">
         <button
@@ -66,7 +66,7 @@ export function Header() {
       >
         {navigation.map((item) => (
           <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
-            <span dir={textDirection}>{item.label}</span>
+            <span className="header-link-label" dir={textDirection}>{item.label}</span>
           </a>
         ))}
       </nav>
