@@ -3,7 +3,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
 import { isWebUrl } from "../utils/links";
 
-function ProjectCover({ project }: { project: Project }) {
+export function ProjectCover({ project }: { project: Project }) {
   const { t, textDirection } = useLanguage();
   const [primaryTitle, secondaryTitle] = project.coverTitle ?? [project.name];
   if (project.image) {
@@ -39,7 +39,6 @@ function ProjectCover({ project }: { project: Project }) {
             <span className="cover-title">
               {primaryTitle}
               <span>{secondaryTitle}</span>
-              <span className="cover-period">.</span>
             </span>
           </>
         )}
@@ -52,7 +51,7 @@ function ProjectCover({ project }: { project: Project }) {
               {secondaryTitle && (
                 <>
                   <br />
-                  <em>{secondaryTitle}.</em>
+                  <em>{secondaryTitle}</em>
                 </>
               )}
             </span>
@@ -82,7 +81,11 @@ function ProjectArticle({ project }: { project: Project }) {
   const hasRepository = isWebUrl(project.repositoryUrl);
   const hasLiveSite = isWebUrl(project.liveUrl);
   return (
-    <article className="project" aria-labelledby={`${project.id}-title`}>
+    <article
+      id={project.id}
+      className="project"
+      aria-labelledby={`${project.id}-title`}
+    >
       <ProjectCover project={project} />
       <div className="project-info">
         <div className="project-meta">
@@ -91,7 +94,7 @@ function ProjectArticle({ project }: { project: Project }) {
             {project.role}
           </span>
         </div>
-        <h3 id={`${project.id}-title`}>{project.name}</h3>
+        <h2 id={`${project.id}-title`}>{project.name}</h2>
         <p className="project-summary" dir={textDirection}>
           {project.summary}
         </p>
@@ -166,9 +169,9 @@ export function SelectedWork() {
           <p className="eyebrow section-index" dir={textDirection}>
             {t.ui.workIndex}
           </p>
-          <h2 id="work-title" dir={textDirection}>
+          <h1 className="page-title" id="work-title" dir={textDirection}>
             {t.ui.workTitle[0]} <em>{t.ui.workTitle[1]}</em>
-          </h2>
+          </h1>
         </div>
         <p className="section-note" dir={textDirection}>
           {t.ui.workNote}

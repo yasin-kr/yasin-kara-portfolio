@@ -29,7 +29,6 @@ export interface ContactDetails {
 export interface Profile {
   name: string;
   role: string;
-  location: string;
   intro: string;
   availability: string;
   contactIntro: string;
@@ -44,7 +43,6 @@ export interface Profile {
 export const profile: Profile = {
   name: "Yasin Kara",
   role: "Full Stack Developer",
-  location: "Kütahya, Türkiye",
   intro:
     "I build thoughtful web experiences with React, TypeScript, and Node.js.",
   availability: "Open to developer opportunities",
@@ -124,10 +122,4 @@ export const toolkit: { name: string; items: string[] }[] = [
     name: "Tools",
     items: ["Swagger", "Axios", "Vite", "Git", "GitHub"],
   },
-];
-
-export const navigation: { label: string; href: string }[] = [
-  { label: "My projects", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
 ];

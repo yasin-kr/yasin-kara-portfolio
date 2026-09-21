@@ -1,5 +1,6 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
+import { pagePaths } from "../data/pages";
 
 export function Hero() {
   const { profile, t, textDirection } = useLanguage();
@@ -17,27 +18,23 @@ export function Hero() {
       </div>
       <h1 id="hero-title" className="hero-name">
         {firstName}{" "}
-        <em>
-          {lastName.join(" ")}
-          <span>.</span>
-        </em>
+        <em>{lastName.join(" ")}</em>
       </h1>
       <div className="hero-introduction">
         <div className="hero-role">
           <span className="role-line" aria-hidden="true" />
           <div>
             <p dir={textDirection}>{profile.role}</p>
-            <span dir={textDirection}>{profile.location}</span>
           </div>
         </div>
         <div className="hero-description">
           <p dir={textDirection}>{profile.intro}</p>
           <div className="hero-actions">
-            <a href="#work" className="button button--primary">
+            <a href={pagePaths.projects} className="button button--primary">
               <span dir={textDirection}>{t.ui.viewWork}</span>
-              <Arrow direction="down" />
+              <Arrow />
             </a>
-            <a href="#contact" className="text-link">
+            <a href={pagePaths.contact} className="text-link">
               <span dir={textDirection}>{t.ui.getInTouch}</span>
               <Arrow />
             </a>
@@ -48,7 +45,7 @@ export function Hero() {
         <span className="eyebrow" dir={textDirection}>
           {t.ui.heroFootnote}
         </span>
-        <a href="#work" className="scroll-link">
+        <a href="#featured-work" className="scroll-link">
           <span dir={textDirection}>{t.ui.exploreBelow}</span>
           <Arrow direction="down" />
         </a>

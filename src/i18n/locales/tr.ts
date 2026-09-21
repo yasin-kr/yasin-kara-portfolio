@@ -3,7 +3,6 @@ import type { Translation } from "../types";
 const tr: Translation = {
   profile: {
     role: "Full Stack Geliştirici",
-    location: "Kütahya, Türkiye",
     intro:
       "React, TypeScript ve Node.js ile özenle düşünülmüş web deneyimleri geliştiriyorum.",
     availability: "Geliştirici pozisyonlarına açığım",
@@ -43,6 +42,15 @@ const tr: Translation = {
     },
   },
   navigation: { work: "Projelerim", about: "Hakkımda", contact: "İletişim" },
+  pages: {
+    allProjects: "Tüm projeleri incele",
+    viewProject: "Projeyi incele",
+    readAbout: "Beni daha yakından tanı",
+    teamworkIndex: "EKİP İÇİNDE ÇALIŞMA",
+    teamworkTitle: ["Birlikte üretmek", "Sorumluluk almak"],
+    teamworkIntro:
+      "Mühendislik geçmişim, ekip içinde çalışma biçimime de yansıyor. Bu projelerde ekip liderliğini aktif geliştirme sorumluluklarıyla birlikte üstlendim.",
+  },
   toolkit: {
     frontend: "Ön Yüz",
     backend: "Arka Uç",
@@ -63,7 +71,7 @@ const tr: Translation = {
     heroFootnote: "Mühendislikten gelen birikim. Yeni bir yön.",
     exploreBelow: "Keşfetmeye devam et",
     workIndex: "01 / PROJELER",
-    workTitle: ["Seçili", "projeler."],
+    workTitle: ["Seçili", "projeler"],
     workNote: "Farklı projeler. Üreterek öğrenmeye duyulan ortak bağlılık.",
     coverSelectedWork: "YK / SEÇİLİ PROJELER",
     projectCover: "PROJE KAPAĞI",
@@ -72,22 +80,21 @@ const tr: Translation = {
     contribution: "Katkılarım",
     liveSite: "Siteyi ziyaret et",
     aboutIndex: "02 / KISACA BEN",
-    aboutTitle: ["Farklı bir yol.", "Aynı merak."],
+    aboutTitle: ["Farklı bir yol", "Aynı merak"],
     aboutCaption: "MÜHENDİSLİKTEN → YAZILIMA",
     storyLead:
       "Operasyonları koordine etmekten web’in parçalarını bir araya getirmeye.",
     nextChapter: "YENİ BİR SAYFA",
     toolkitIndex: "KULLANDIĞIM ARAÇLAR",
-    toolkitTitle: ["Teknik", "beceriler."],
+    toolkitTitle: ["Teknik", "beceriler"],
     toolkitNote:
       "Projelerle kazandığım pratik deneyim. Her zaman üzerine yenisini ekliyorum.",
     contactIndex: "03 / SIRADA NE VAR?",
-    contactTitle: ["Birlikte", "çalışalım."],
-    basedIn: "Konum: {location}",
+    contactTitle: ["Birlikte", "çalışalım"],
     viewCv: "Özgeçmişi görüntüle",
     backToTop: "Başa dön",
     metaDescription:
-      "Yasin Kara, Kütahya, Türkiye’de yaşayan bir Full Stack Geliştirici. React, TypeScript ve Node.js ile özenle düşünülmüş web deneyimleri geliştiriyor. Seçili projelerini ve mühendislik geçmişini keşfedin.",
+      "Yasin Kara bir Full Stack Geliştirici. React, TypeScript ve Node.js ile özenle düşünülmüş web deneyimleri geliştiriyor. Seçili projelerini ve mühendislik geçmişini keşfedin.",
   },
 };
 

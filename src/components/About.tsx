@@ -14,15 +14,14 @@ export function About() {
           <p className="eyebrow section-index" dir={textDirection}>
             {t.ui.aboutIndex}
           </p>
-          <h2 id="about-title" dir={textDirection}>
+          <h1 className="page-title" id="about-title" dir={textDirection}>
             {t.ui.aboutTitle[0]}
             <br />
             <em>{t.ui.aboutTitle[1]}</em>
-          </h2>
+          </h1>
           <div className="about-mark" aria-hidden="true">
             <span>y</span>
             <em>k</em>
-            <span className="about-mark-dot">.</span>
           </div>
           <p className="about-caption" dir={textDirection}>
             {t.ui.aboutCaption}
@@ -45,7 +44,7 @@ export function About() {
               <span className="eyebrow" dir={textDirection}>
                 {t.ui.nextChapter}
               </span>
-              <h3 dir="auto">{profile.education.name}</h3>
+              <h2 dir="auto">{profile.education.name}</h2>
               <p dir={textDirection}>{profile.education.completed}</p>
             </div>
           </div>

@@ -5,16 +5,18 @@ export type Locale = "en" | "tr" | "es" | "ar" | "ru" | "de";
 export interface Translation {
   profile: Pick<
     Profile,
-    | "role"
-    | "location"
-    | "intro"
-    | "availability"
-    | "contactIntro"
-    | "about"
-    | "education"
+    "role" | "intro" | "availability" | "contactIntro" | "about" | "education"
   >;
   projects: Record<string, Pick<Project, "role" | "summary" | "contributions">>;
   navigation: { work: string; about: string; contact: string };
+  pages: {
+    allProjects: string;
+    viewProject: string;
+    readAbout: string;
+    teamworkIndex: string;
+    teamworkTitle: [string, string];
+    teamworkIntro: string;
+  };
   toolkit: {
     frontend: string;
     backend: string;
@@ -53,7 +55,6 @@ export interface Translation {
     toolkitNote: string;
     contactIndex: string;
     contactTitle: [string, string];
-    basedIn: string;
     viewCv: string;
     backToTop: string;
     metaDescription: string;

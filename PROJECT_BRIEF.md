@@ -2,7 +2,7 @@
 
 ## Amaç
 
-İş başvurularında ve profesyonel profillerde paylaşılacak, özenli ve anlaşılır bir geliştirici portfolyosu. Varsayılan dil İngilizce; Türkçe, İspanyolca, Arapça, Rusça ve Almanca da desteklenir. Tek sayfa; projeler, hakkında, teknik araçlar ve iletişim bölümleri. Kullanıcıyla iletişim Türkçe.
+İş başvurularında ve profesyonel profillerde paylaşılacak, özenli ve anlaşılır bir geliştirici portfolyosu. Varsayılan dil İngilizce; Türkçe, İspanyolca, Arapça, Rusça ve Almanca da desteklenir. Dört sayfa: Anasayfa, Projelerim, Hakkımda ve İletişim. Kullanıcıyla iletişim Türkçe.
 
 ## Doğrulanmış profil
 
@@ -47,7 +47,7 @@ JavaScript ekip projesi; Team Lead. Vite, Axios ve TMDB kullanıldı. Weekly Tre
 - Proje adresleri için isteğe bağlı `repositoryUrl` ve `liveUrl`.
 - İletişim için isteğe bağlı `profile.contact.email`, `github`, `linkedin`, `cv`.
 - Sağlanmamış veya geçersiz adreslere ait etkileşim gösterilmez. Sahte iletişim formu yoktur.
-- İlk sürümde router, backend, veritabanı, üyelik veya yönetim paneli yoktur.
+- Vite MPA yapısında dört gerçek HTML girişi ve standart sayfa bağlantıları vardır. Ek router, backend, veritabanı, üyelik veya yönetim paneli yoktur.
 - Gerçek alan adı sağlanmadan canonical ya da sosyal paylaşım URL'si oluşturulmaz.
 
 ## Tamamlanan işler
@@ -105,6 +105,42 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 - Logo hover ve klavye odağında şampanya rengine geçer. Aynı alt çizgi klavye odağında da görünür; mevcut azaltılmış hareket tercihi geçişi kapatır.
 - Çizgi mutlak konumlandırılır; yerleşimde kaymaya neden olmaz. Arapçada da animasyon başlangıcı soldadır.
 - Build, lint ve typecheck başarılı. Bu küçük stil değişikliği için tarayıcı test paketi yeniden çalıştırılmadı.
+
+## 21 Eylül 2026 — Logo hover düzeltmesi
+
+- YK logosunun alt çizgisi kaldırıldı; hover ve klavye odağında yalnızca şampanya renk geçişi korunur.
+- Bölüm bağlantılarındaki soldan sağa alt çizgi efekti devam eder.
+- Build, lint ve typecheck başarılı. Tarayıcı test paketi bu küçük düzeltme için yeniden çalıştırılmadı.
+
+## 21 Eylül 2026 — Sabit header
+
+- Header, tam genişlikte antrasit arka planla kaydırma sırasında ekranın üstünde kalır (`position: sticky`).
+- Bölüm bağlantıları için header yüksekliğine bağlı kaydırma payı eklendi; başlıklar header altında gizlenmez. Mobil menü açıldığında üst satır yüksekliği korunur.
+- Build, lint ve typecheck başarılı. Yerel Chrome'da 1440 ve 390 px genişlikte kaydırma ve Hakkımda bağlantısı kontrol edildi: header üst konumu 0 px, bölüm başlığı header altında görünür ve yatay taşma yok.
+
+## 21 Eylül 2026 — Konum bilgisinin kaldırılması
+
+- Kullanıcının isteğiyle konum bilgisi Hero ve Contact bölümlerinden, ortak profil verisinden ve altı dilin çeviri alanlarından kaldırıldı. Konumu sitede yeniden yayımlamayın.
+- Statik HTML ve tüm dillerin meta açıklamaları konum içermeyecek şekilde güncellendi. Kullanılmayan konum stilleri ve eski derleme kalıntıları temizlendi.
+- Build, lint ve typecheck başarılı. Kaynak ve derleme dosyalarında konum ifadelerinin kalmadığı metin aramasıyla doğrulandı.
+
+## 21 Eylül 2026 — Dört sayfalı yapı
+
+- Kullanıcıyla kararlaştırılan yapı uygulandı: `/`, `/projects/`, `/about/`, `/contact/`. Her sayfa kendi HTML girişiyle derlenir; ek bağımlılık kullanılmaz.
+- Anasayfaya kısa proje önizlemeleri ve hakkında özeti yerleştirildi. Proje kartları Projelerim sayfasında ilgili projeye bağlanır.
+- Hakkımda sayfası mühendislikten yazılıma geçiş, eğitim, Money Guard/Cinemania ekip sorumlulukları ve teknik araçlardan oluşur. Yeni kişisel iddia eklenmedi.
+- İletişim kendi sayfasına taşındı; henüz sağlanmamış iletişim kanalları için işlevsiz bağlantı üretilmedi.
+- Header/footer dört sayfaya yönlendirir ve aktif sayfayı belirtir. Sabit header, YK renk efekti, menü alt çizgileri, altı dil ve konumun kaldırılması korunur.
+- Her sayfada tek h1 ve dile/sayfaya uygun başlık/açıklama vardır. Sayfa içi bağlantılar, içeriğe atlama ve başa dönme bağlantıları güncellendi.
+- Build, lint ve typecheck geçti. Üretim çıktısı `http://127.0.0.1:4173/` üzerinden Chrome ile doğrulandı: dört sayfa × altı dil × masaüstü/mobil için 408 kontrol başarılı; tarayıcı hatası yok.
+- Doğrudan adres açma, yenileme, geri/ileri gezinme, dil kalıcılığı, aktif menü, sabit header ve proje bağlantıları doğrulandı. İngilizce masaüstü/mobil ve Arapça mobil axe taramalarında ihlal bulunmadı.
+- 320 ve 768 px genişliklerde İngilizce, Arapça ve Almanca ile ek 24 sayfa senaryosunda yatay taşma veya başlık kesilmesi bulunmadı. Türkçe masaüstü ve Arapça/Almanca mobil ekran görüntüleri görsel olarak incelendi.
+- Yerel test betiği `.verification/verify-pages.mjs`, raporu `.verification/pages-report.json`; bu doğrulama dosyaları Git kapsamı dışındadır.
+
+## 21 Eylül 2026 — Başlık noktaları
+
+- Altı dilde bölüm başlıklarının sonundaki noktalar, ana isim başlığının ve tipografik proje kapaklarının dekoratif noktaları kaldırıldı. Hakkımda monogramındaki nokta ve kullanılmayan nokta stilleri temizlendi.
+- Build, lint ve typecheck başarılı. Bu metin/dekorasyon değişikliği için tarayıcı test paketi yeniden çalıştırılmadı.
 
 ## Kullanıcıdan beklenen içerikler
 

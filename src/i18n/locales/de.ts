@@ -3,7 +3,6 @@ import type { Translation } from "../types";
 const de: Translation = {
   profile: {
     role: "Full-Stack-Entwickler",
-    location: "Kütahya, Türkei",
     intro:
       "Ich entwickle durchdachte Webanwendungen mit React, TypeScript und Node.js.",
     availability: "Offen für Stellen in der Entwicklung",
@@ -49,6 +48,15 @@ const de: Translation = {
     about: "Über mich",
     contact: "Kontakt",
   },
+  pages: {
+    allProjects: "Alle Projekte ansehen",
+    viewProject: "Projekt ansehen",
+    readAbout: "Mehr über mich",
+    teamworkIndex: "ZUSAMMENARBEIT IM TEAM",
+    teamworkTitle: ["Gemeinsam entwickeln", "Verantwortung tragen"],
+    teamworkIntro:
+      "Mein Hintergrund im Ingenieurwesen prägt auch meine Zusammenarbeit im Team. In diesen Projekten verband ich die Teamleitung mit aktiver Entwicklungsarbeit.",
+  },
   toolkit: {
     frontend: "Benutzeroberfläche",
     backend: "Server",
@@ -69,7 +77,7 @@ const de: Translation = {
     heroFootnote: "Wurzeln im Ingenieurwesen. Eine neue Richtung.",
     exploreBelow: "Weiter entdecken",
     workIndex: "01 / DIE PROJEKTE",
-    workTitle: ["Ausgewählte", "Projekte."],
+    workTitle: ["Ausgewählte", "Projekte"],
     workNote:
       "Verschiedene Projekte. Derselbe Anspruch, durch Praxis zu lernen.",
     coverSelectedWork: "YK / AUSGEWÄHLTE PROJEKTE",
@@ -79,21 +87,20 @@ const de: Translation = {
     contribution: "Mein Beitrag",
     liveSite: "Website besuchen",
     aboutIndex: "02 / EIN WENIG ÜBER MICH",
-    aboutTitle: ["Ein anderer Weg.", "Dieselbe Neugier."],
+    aboutTitle: ["Ein anderer Weg", "Dieselbe Neugier"],
     aboutCaption: "INGENIEURWESEN → SOFTWAREENTWICKLUNG",
     storyLead:
       "Von der Koordination von Abläufen zum Verbinden der Bausteine des Webs.",
     nextChapter: "DAS NÄCHSTE KAPITEL",
     toolkitIndex: "DIE WERKZEUGE, MIT DENEN ICH ARBEITE",
-    toolkitTitle: ["Technische", "Werkzeuge."],
+    toolkitTitle: ["Technische", "Werkzeuge"],
     toolkitNote: "Praktische Erfahrung aus Projekten. Ich lerne stetig dazu.",
     contactIndex: "03 / WIE ES WEITERGEHT",
-    contactTitle: ["Arbeiten wir", "zusammen."],
-    basedIn: "Standort: {location}",
+    contactTitle: ["Arbeiten wir", "zusammen"],
     viewCv: "Lebenslauf ansehen",
     backToTop: "Nach oben",
     metaDescription:
-      "Yasin Kara ist Full-Stack-Entwickler aus Kütahya in der Türkei und entwickelt durchdachte Webanwendungen mit React, TypeScript und Node.js. Entdecken Sie ausgewählte Projekte und seinen Hintergrund im Ingenieurwesen.",
+      "Yasin Kara ist Full-Stack-Entwickler und entwickelt durchdachte Webanwendungen mit React, TypeScript und Node.js. Entdecken Sie ausgewählte Projekte und seinen Hintergrund im Ingenieurwesen.",
   },
 };
 

@@ -3,7 +3,6 @@ import type { Translation } from "../types";
 const ar: Translation = {
   profile: {
     role: "مطور ويب متكامل",
-    location: "كوتاهيا، تركيا",
     intro: "أبني تجارب ويب مدروسة باستخدام React وTypeScript وNode.js.",
     availability: "متاح لفرص عمل في التطوير",
     contactIntro:
@@ -41,6 +40,15 @@ const ar: Translation = {
     },
   },
   navigation: { work: "مشاريعي", about: "عني", contact: "تواصل" },
+  pages: {
+    allProjects: "استعرض جميع المشاريع",
+    viewProject: "استعرض المشروع",
+    readAbout: "المزيد عني",
+    teamworkIndex: "العمل مع فريق",
+    teamworkTitle: ["عمل مشترك", "ومسؤولية فعلية"],
+    teamworkIntro:
+      "تنعكس خلفيتي الهندسية على أسلوبي في العمل الجماعي. في هذه المشاريع جمعت بين قيادة الفريق والمشاركة المباشرة في التطوير.",
+  },
   toolkit: {
     frontend: "الواجهات الأمامية",
     backend: "الواجهات الخلفية",
@@ -61,7 +69,7 @@ const ar: Translation = {
     heroFootnote: "جذور هندسية. اتجاه جديد.",
     exploreBelow: "اكتشف المزيد",
     workIndex: "01 / أعمالي",
-    workTitle: ["أعمال", "مختارة."],
+    workTitle: ["أعمال", "مختارة"],
     workNote: "مشاريع متنوعة يجمعها الحرص على التعلم من خلال التطبيق.",
     coverSelectedWork: "YK / أعمال مختارة",
     projectCover: "غلاف المشروع",
@@ -70,20 +78,19 @@ const ar: Translation = {
     contribution: "مساهمتي",
     liveSite: "الموقع المباشر",
     aboutIndex: "02 / نبذة عني",
-    aboutTitle: ["مسار مختلف.", "والفضول ذاته."],
+    aboutTitle: ["مسار مختلف", "والفضول ذاته"],
     aboutCaption: "من الهندسة إلى تطوير البرمجيات",
     storyLead: "من تنسيق العمليات إلى ربط مكونات الويب.",
     nextChapter: "الفصل التالي",
     toolkitIndex: "الأدوات التي أعمل بها",
-    toolkitTitle: ["أدواتي", "التقنية."],
+    toolkitTitle: ["أدواتي", "التقنية"],
     toolkitNote: "خبرة عملية اكتسبتها من المشاريع، وأواصل تطويرها.",
     contactIndex: "03 / الخطوة التالية",
-    contactTitle: ["لنعمل", "معا."],
-    basedIn: "أقيم في {location}",
+    contactTitle: ["لنعمل", "معا"],
     viewCv: "عرض السيرة الذاتية",
     backToTop: "العودة إلى الأعلى",
     metaDescription:
-      "Yasin Kara مطور ويب متكامل يقيم في كوتاهيا، تركيا، ويبني تجارب ويب مدروسة باستخدام React وTypeScript وNode.js. اكتشف مختارات من مشاريعه وخلفيته الهندسية.",
+      "Yasin Kara مطور ويب متكامل يبني تجارب ويب مدروسة باستخدام React وTypeScript وNode.js. اكتشف مختارات من مشاريعه وخلفيته الهندسية.",
   },
 };
 

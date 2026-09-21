@@ -3,7 +3,6 @@ import type { Translation } from "../types";
 const ru: Translation = {
   profile: {
     role: "Full Stack-разработчик",
-    location: "Кютахья, Турция",
     intro:
       "Создаю продуманные веб-интерфейсы с помощью React, TypeScript и Node.js.",
     availability: "Открыт к работе в разработке",
@@ -43,6 +42,15 @@ const ru: Translation = {
     },
   },
   navigation: { work: "Мои проекты", about: "Обо мне", contact: "Контакты" },
+  pages: {
+    allProjects: "Все проекты",
+    viewProject: "Подробнее о проекте",
+    readAbout: "Подробнее обо мне",
+    teamworkIndex: "РАБОТА В КОМАНДЕ",
+    teamworkTitle: ["Совместная работа", "Личная ответственность"],
+    teamworkIntro:
+      "Инженерный опыт влияет и на мой подход к работе в команде. В этих проектах я совмещал руководство командой с непосредственным участием в разработке.",
+  },
   toolkit: {
     frontend: "Фронтенд",
     backend: "Бэкенд",
@@ -63,7 +71,7 @@ const ru: Translation = {
     heroFootnote: "Инженерная основа. Новое направление.",
     exploreBelow: "Узнать больше",
     workIndex: "01 / Проекты",
-    workTitle: ["Избранные", "проекты."],
+    workTitle: ["Избранные", "проекты"],
     workNote: "Разные проекты. Общее стремление учиться на практике.",
     coverSelectedWork: "YK / Избранные проекты",
     projectCover: "Обложка проекта",
@@ -72,21 +80,20 @@ const ru: Translation = {
     contribution: "Мой вклад",
     liveSite: "Открыть сайт",
     aboutIndex: "02 / Немного обо мне",
-    aboutTitle: ["Другой путь.", "Тот же интерес."],
+    aboutTitle: ["Другой путь", "Тот же интерес"],
     aboutCaption: "От инженерии к разработке",
     storyLead: "От координации процессов к объединению компонентов веба.",
     nextChapter: "Следующая глава",
     toolkitIndex: "Инструменты, с которыми я работаю",
-    toolkitTitle: ["Инструменты", "разработки."],
+    toolkitTitle: ["Инструменты", "разработки"],
     toolkitNote:
       "Практический опыт, полученный в проектах. Постоянно его пополняю.",
     contactIndex: "03 / Что дальше",
-    contactTitle: ["Давайте работать", "вместе."],
-    basedIn: "Местоположение: {location}",
+    contactTitle: ["Давайте работать", "вместе"],
     viewCv: "Смотреть резюме",
     backToTop: "Наверх",
     metaDescription:
-      "Yasin Kara — Full Stack-разработчик из Кютахьи, Турция. Создаёт продуманные веб-интерфейсы с помощью React, TypeScript и Node.js. Избранные проекты и опыт в инженерии.",
+      "Yasin Kara — Full Stack-разработчик. Создаёт продуманные веб-интерфейсы с помощью React, TypeScript и Node.js. Избранные проекты и опыт в инженерии.",
   },
 };
 

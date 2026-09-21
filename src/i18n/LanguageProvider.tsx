@@ -3,6 +3,7 @@ import { profile, projects, toolkit } from "../data/portfolio";
 import { LanguageContext } from "./LanguageContext";
 import { isLocale, readSavedLocale, STORAGE_KEY } from "./languages";
 import { translations } from "./translations";
+import { currentPage, pagePaths } from "../data/pages";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState(readSavedLocale);
@@ -13,10 +14,25 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     // Keep the composition LTR. Arabic text blocks get their own RTL direction.
     document.documentElement.dir = "ltr";
     document.documentElement.dataset.locale = locale;
-    document.title = `${profile.name} — ${t.profile.role}`;
+    const titles = {
+      home: t.ui.home,
+      projects: t.navigation.work,
+      about: t.navigation.about,
+      contact: t.navigation.contact,
+    };
+    const descriptions = {
+      home: t.ui.metaDescription,
+      projects: t.ui.workNote,
+      about: t.profile.about.join(" "),
+      contact: t.profile.contactIntro,
+    };
+    document.title =
+      currentPage === "home"
+        ? `${profile.name} — ${t.profile.role}`
+        : `${titles[currentPage]} — ${profile.name}`;
     document
       .querySelector('meta[name="description"]')
-      ?.setAttribute("content", t.ui.metaDescription);
+      ?.setAttribute("content", descriptions[currentPage]);
     try {
       window.localStorage.setItem(STORAGE_KEY, locale);
     } catch {
@@ -45,9 +61,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       ...t.projects[project.id],
     })),
     navigation: [
-      { label: t.navigation.work, href: "#work" },
-      { label: t.navigation.about, href: "#about" },
-      { label: t.navigation.contact, href: "#contact" },
+      { label: t.ui.home, href: pagePaths.home },
+      { label: t.navigation.work, href: pagePaths.projects },
+      { label: t.navigation.about, href: pagePaths.about },
+      { label: t.navigation.contact, href: pagePaths.contact },
     ],
     toolkit: toolkit.map((group, index) => ({
       name: groupNames[index],

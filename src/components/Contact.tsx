@@ -37,11 +37,11 @@ export function Contact() {
       </div>
       <div className="contact-layout">
         <div>
-          <h2 id="contact-title" dir={textDirection}>
+          <h1 className="page-title" id="contact-title" dir={textDirection}>
             {t.ui.contactTitle[0]}
             <br />
             <em>{t.ui.contactTitle[1]}</em>
-          </h2>
+          </h1>
           {isEmail(contact.email) && (
             <a className="contact-email" href={`mailto:${contact.email}`}>
               {contact.email}
@@ -54,9 +54,6 @@ export function Contact() {
             ✳
           </span>
           <p dir={textDirection}>{profile.contactIntro}</p>
-          <span className="contact-location" dir={textDirection}>
-            {t.ui.basedIn.replace("{location}", profile.location)}
-          </span>
           {links.length > 0 && (
             <div className="contact-links">
               {links.map((link) => (

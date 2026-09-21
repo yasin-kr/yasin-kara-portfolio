@@ -7,6 +7,15 @@ const en: Translation = {
     projects.map((project) => [project.id, project]),
   ),
   navigation: { work: "My projects", about: "About", contact: "Contact" },
+  pages: {
+    allProjects: "Explore all projects",
+    viewProject: "Explore project",
+    readAbout: "More about me",
+    teamworkIndex: "WORKING WITH A TEAM",
+    teamworkTitle: ["Shared work", "Real responsibility"],
+    teamworkIntro:
+      "My engineering background carries into how I work with a team. In these projects, I combined team leadership with hands-on development.",
+  },
   toolkit: {
     frontend: "Frontend",
     backend: "Backend",
@@ -27,7 +36,7 @@ const en: Translation = {
     heroFootnote: "Engineering roots. A new direction.",
     exploreBelow: "Explore below",
     workIndex: "01 / THE WORK",
-    workTitle: ["Selected", "work."],
+    workTitle: ["Selected", "work"],
     workNote:
       "Different projects. A shared commitment to learning by building.",
     coverSelectedWork: "YK / SELECTED WORK",
@@ -37,22 +46,21 @@ const en: Translation = {
     contribution: "My contribution",
     liveSite: "Live site",
     aboutIndex: "02 / A LITTLE ABOUT ME",
-    aboutTitle: ["A different path.", "The same curiosity."],
+    aboutTitle: ["A different path", "The same curiosity"],
     aboutCaption: "ENGINEERING → DEVELOPMENT",
     storyLead:
       "From coordinating operations to connecting the pieces of the web.",
     nextChapter: "THE NEXT CHAPTER",
     toolkitIndex: "THE TOOLS I WORK WITH",
-    toolkitTitle: ["Technical", "toolkit."],
+    toolkitTitle: ["Technical", "toolkit"],
     toolkitNote:
       "Practical experience, built through projects. Always adding to it.",
     contactIndex: "03 / WHAT’S NEXT",
-    contactTitle: ["Let’s work", "together."],
-    basedIn: "Based in {location}",
+    contactTitle: ["Let’s work", "together"],
     viewCv: "View CV",
     backToTop: "Back to top",
     metaDescription:
-      "Yasin Kara is a Full Stack Developer based in Kütahya, Türkiye, building thoughtful web experiences with React, TypeScript, and Node.js. Explore selected projects and his engineering background.",
+      "Yasin Kara is a Full Stack Developer building thoughtful web experiences with React, TypeScript, and Node.js. Explore selected projects and his engineering background.",
   },
 };
 

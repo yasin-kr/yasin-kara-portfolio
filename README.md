@@ -1,6 +1,6 @@
 # Yasin Kara Portfolio
 
-Yasin Kara'nın projelerini, teknik çalışmalarını ve mühendislikten yazılıma geçişini sunan, altı dil destekli tek sayfalık geliştirici portfolyosu. Varsayılan dil İngilizcedir.
+Yasin Kara'nın projelerini, teknik çalışmalarını ve mühendislikten yazılıma geçişini sunan, altı dil destekli dört sayfalık geliştirici portfolyosu. Varsayılan dil İngilizcedir.
 
 ## Kurulum ve çalıştırma
 
@@ -31,31 +31,46 @@ npm run preview
 - React, TypeScript ve Vite; sade CSS.
 - Koyu antrasit zemin, sıcak kırık beyaz yazı ve ölçülü şampanya vurgular.
 - Fontsource paketlerinden yerel sunulan Manrope ve Cormorant Garamond yazı tipleri; Türkçe karakter desteği.
-- Router, backend veya mesaj gönderme servisi gerektirmeyen tek sayfa.
+- Vite çok sayfalı yapı (MPA): dört gerçek HTML girişi, ortak React bileşenleri ve standart sayfa bağlantıları. Ek router, backend veya mesaj gönderme servisi yoktur.
+
+## Sayfalar ve yayınlama
+
+| Sayfa | Adres | İçerik |
+| --- | --- | --- |
+| Anasayfa | `/` | Tanıtım, üç proje önizlemesi, kısa hakkında özeti |
+| Projelerim | `/projects/` | Proje kapakları, roller, teknolojiler, kişisel katkılar |
+| Hakkımda | `/about/` | Mühendislikten yazılıma geçiş, eğitim, ekip deneyimi, teknik araçlar |
+| İletişim | `/contact/` | İletişim daveti ve sağlandığında gerçek bağlantılar |
+
+Sayfa adresleri `src/data/pages.ts`, sayfa bileşenleri `src/pages/` içinde bulunur. Her HTML girişindeki `data-page`, gösterilecek sayfayı belirler. Header ve footer ortak kullanılır; aktif sayfa `aria-current="page"` ile belirtilir. Dil seçimi aynı origin üzerindeki tüm sayfalarda localStorage üzerinden korunur.
+
+`npm run build` çıktısı `dist/index.html`, `dist/projects/index.html`, `dist/about/index.html` ve `dist/contact/index.html` dosyalarını içerir. Statik yayın ortamına **dist klasörünün tamamını** yükleyin; URL kökünden yayınlayın ve dizinler için `index.html` sunumunu etkin tutun. Tüm adresleri anasayfaya yönlendiren SPA rewrite kuralı eklemeyin. Gerçek HTML dosyaları sayesinde sayfa yenileme ve doğrudan bağlantılar sunucu tarafında özel router gerektirmez. Alt klasör altında yayınlanacaksa Vite `base` ve `pagePaths` değerleri birlikte uyarlanmalıdır.
+
+Üretim önizlemesi: `npm.cmd run preview` → `http://127.0.0.1:4173/`.
 
 ## İçeriği düzenleme
 
-Profil, proje, teknoloji ve gezinme verilerinin merkezi `src/data/portfolio.ts` dosyasıdır:
+Profil, proje ve teknoloji verilerinin merkezi `src/data/portfolio.ts` dosyasıdır:
 
-- `profile`: isim, unvan, tanıtım, konum, hakkında metinleri ve eğitim.
+- `profile`: isim, unvan, tanıtım, hakkında metinleri ve eğitim. Konum bilgisi yayımlanmaz.
 - `profile.contact`: isteğe bağlı `email`, `github`, `linkedin` ve `cv` alanları.
 - `projects`: doğrulanmış roller, açıklamalar, katkılar ve teknolojiler.
 - `toolkit`: Frontend, Backend ve Tools grupları.
-- `navigation`: bölüm bağlantıları.
+- Sayfa yolları `src/data/pages.ts`; gezinme etiketleri altı dilin çeviri dosyalarındadır.
 
 ## Dil desteği
 
-Sağ üstteki bayraklı menüden İngilizce, Türkçe, İspanyolca, Arapça, Rusça veya Almanca seçilebilir. İlk ziyarette tarayıcı dilinden bağımsız olarak İngilizce açılır. Seçim `yasin-kara-language` localStorage anahtarında saklanır ve yenilemede korunur. Kayıt geçersizse İngilizceye dönülür; depolama engelliyse seçim açık oturum boyunca çalışır.
+Sağ üstteki bayraklı menüden İngilizce, Türkçe, İspanyolca, Arapça, Rusça veya Almanca seçilebilir. İlk ziyarette tarayıcı dilinden bağımsız olarak İngilizce açılır. Seçim `yasin-kara-language` localStorage anahtarında saklanır ve yenilemede korunur. Kayıt geçersizse İngilizceye dönülür; depolama engelliyse seçim yalnızca geçerli sayfada korunur.
 
 - `src/i18n/locales/en.ts`, ortak İngilizce profil ve proje içeriklerini `src/data/portfolio.ts` dosyasından alır.
 - Diğer dillerin profil, proje ve arayüz çevirileri `src/i18n/locales/{tr,es,ar,ru,de}.ts` dosyalarındadır. İçerik değişikliklerinde tüm dil dosyalarını güncelleyin.
-- `src/i18n/types.ts`, her dilde gereken alanları tanımlar; `{name}` ve `{location}` yer tutucularını koruyun.
+- `src/i18n/types.ts`, her dilde gereken alanları tanımlar; `{name}` yer tutucusunu koruyun.
 - `LanguageProvider`, seçimi, çevrilmiş içerikleri, HTML `lang` bilgisini ve sayfa başlığı/açıklamasını yönetir. Görünür gezinme etiketleri çeviri dosyalarındadır.
 - Arapçada genel düzen ve sütun sırası LTR kalır; yalnızca metin blokları RTL olur. Arapça metinlerde sistemin Tahoma/Arial desteği, Rusça editoryal başlıklarda yerel Kiril fontları kullanılır.
 - Bayraklar yerel SVG dosyalarıdır: İngilizce için Birleşik Krallık, Türkçe için Türkiye, İspanyolca için İspanya, Arapça için BAE, Rusça için Rusya, Almanca için Almanya. Seçenekler dilin kendi adıyla da gösterilir.
 - Dil menüsü ok tuşları, Home/End, Enter/Space, Tab ve Escape ile kullanılabilir; dışarı tıklayınca kapanır.
 
-Header logosu `YK` monogramıdır. Menüde sıra numarası yoktur; ilk bağlantı Türkçede **Projelerim**, İngilizcede **My projects** olarak görünür.
+Header logosu `YK` monogramıdır. Menüde sıra numarası yoktur; Anasayfa, Projelerim, Hakkımda ve İletişim bağlantıları seçilen dilde gösterilir. Header üstte sabit kalır; logoda yalnızca renk, sayfa bağlantılarında soldan sağa alt çizgi hover efekti bulunur.
 
 ## Bağlantı ve görselleri ekleme
 
@@ -69,20 +84,26 @@ Gerçek ekran görüntüleri sağlandığında dosyayı `public/` altına ekleyi
 
 `cover` alanı kapağın görsel düzenini, `coverTitle` alanı tipografik kapaktaki bir veya iki metin parçasını belirler. Projenin adını değiştirirken `coverTitle` metnini de güncelleyin. `coverTitle` verilmezse kapakta `name` gösterilir. `image` eklendiğinde tipografik kapak otomatik olarak gerçek görselle değiştirilir; görsel gecikmeli yüklenir ve kırpılmadan gösterilir.
 
-Renk, boşluk ve tipografi değerlerini stil dosyasındaki CSS değişkenlerinden düzenleyin. Sayfa başlığı ve açıklaması `index.html` içindedir. Gerçek alan adı sağlanmadan canonical veya sosyal paylaşım URL'si eklemeyin.
+Renk, boşluk ve tipografi değerlerini stil dosyasındaki CSS değişkenlerinden düzenleyin. Statik sayfa başlığı/açıklaması her sayfanın HTML girişindedir; seçilen dildeki metadata `LanguageProvider` tarafından güncellenir. Gerçek alan adı sağlanmadan canonical veya sosyal paylaşım URL'si eklemeyin.
 
 ## Kodun yapısı
 
 ```text
 src/
-  App.tsx              # Sayfanın bölüm sırası
+  App.tsx              # Ortak sayfa düzeni ve HTML girişine göre sayfa seçimi
   main.tsx             # React ve yerel fontların başlangıcı
   components/          # Header, Hero, SelectedWork, About, Toolkit, Contact, Footer
   data/portfolio.ts    # Düzenlenebilir profil ve proje içeriği
+  data/pages.ts        # Sayfa adresleri ve mevcut HTML girişinin kimliği
+  pages/               # Dört sayfa bileşeni ve sayfa düzenleri
   i18n/                # Altı dilin çevirileri, dil bağlamı ve dil stilleri
   utils/links.ts       # İsteğe bağlı bağlantıların biçim kontrolü
   styles.css           # Tasarım değişkenleri, bölümler, responsive kurallar
 public/favicon.svg     # YK site simgesi
+index.html             # Anasayfa girişi
+projects/index.html    # Projelerim girişi
+about/index.html       # Hakkımda girişi
+contact/index.html     # İletişim girişi
 ```
 
 Mobil menü yerel bir düğmeyle açılır; `Escape` ile kapanır ve odak düğmeye döner. Money Guard ve Cinemania katkıları, tarayıcının yerel `details` / `summary` bileşeniyle açılır. Klavye için görünür odak, içeriğe atlama bağlantısı ve azaltılmış hareket tercihi desteklenir.

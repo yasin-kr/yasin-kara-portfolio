@@ -3,7 +3,6 @@ import type { Translation } from "../types";
 const es: Translation = {
   profile: {
     role: "Desarrollador full stack",
-    location: "Kütahya, Turquía",
     intro: "Creo experiencias web cuidadas con React, TypeScript y Node.js.",
     availability: "Abierto a oportunidades de desarrollo",
     contactIntro:
@@ -43,6 +42,15 @@ const es: Translation = {
     },
   },
   navigation: { work: "Mis proyectos", about: "Sobre mí", contact: "Contacto" },
+  pages: {
+    allProjects: "Ver todos los proyectos",
+    viewProject: "Explorar proyecto",
+    readAbout: "Más sobre mí",
+    teamworkIndex: "TRABAJAR EN EQUIPO",
+    teamworkTitle: ["Trabajo compartido", "Responsabilidad real"],
+    teamworkIntro:
+      "Mi experiencia en ingeniería influye en mi forma de trabajar en equipo. En estos proyectos combiné el liderazgo del equipo con el desarrollo práctico.",
+  },
   toolkit: {
     frontend: "Interfaz",
     backend: "Servidor",
@@ -63,7 +71,7 @@ const es: Translation = {
     heroFootnote: "Raíces en la ingeniería. Un nuevo rumbo.",
     exploreBelow: "Sigue explorando",
     workIndex: "01 / LOS PROYECTOS",
-    workTitle: ["Proyectos", "seleccionados."],
+    workTitle: ["Proyectos", "seleccionados"],
     workNote: "Proyectos distintos. Un mismo compromiso con aprender creando.",
     coverSelectedWork: "YK / PROYECTOS SELECCIONADOS",
     projectCover: "PORTADA DEL PROYECTO",
@@ -72,21 +80,20 @@ const es: Translation = {
     contribution: "Mi aportación",
     liveSite: "Visitar sitio",
     aboutIndex: "02 / UN POCO SOBRE MÍ",
-    aboutTitle: ["Un camino distinto.", "La misma curiosidad."],
+    aboutTitle: ["Un camino distinto", "La misma curiosidad"],
     aboutCaption: "INGENIERÍA → DESARROLLO",
     storyLead: "De coordinar operaciones a conectar las piezas de la web.",
     nextChapter: "EL SIGUIENTE CAPÍTULO",
     toolkitIndex: "LAS HERRAMIENTAS QUE UTILIZO",
-    toolkitTitle: ["Herramientas", "técnicas."],
+    toolkitTitle: ["Herramientas", "técnicas"],
     toolkitNote:
       "Experiencia práctica adquirida a través de proyectos. Siempre en crecimiento.",
     contactIndex: "03 / EL PRÓXIMO PASO",
-    contactTitle: ["Trabajemos", "juntos."],
-    basedIn: "Ubicación: {location}",
+    contactTitle: ["Trabajemos", "juntos"],
     viewCv: "Ver currículum",
     backToTop: "Volver arriba",
     metaDescription:
-      "Yasin Kara es un desarrollador full stack que vive en Kütahya, Turquía, y crea experiencias web cuidadas con React, TypeScript y Node.js. Descubre sus proyectos seleccionados y su trayectoria en ingeniería.",
+      "Yasin Kara es un desarrollador full stack que crea experiencias web cuidadas con React, TypeScript y Node.js. Descubre sus proyectos seleccionados y su trayectoria en ingeniería.",
   },
 };
 
