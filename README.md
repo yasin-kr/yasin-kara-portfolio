@@ -28,7 +28,7 @@ npm run preview
 
 ## Teknoloji ve tasarım
 
-- React, TypeScript ve Vite; sade CSS.
+- React, TypeScript ve Vite; CSS Modules.
 - Koyu antrasit zemin, sıcak kırık beyaz yazı ve ölçülü şampanya vurgular.
 - Fontsource paketlerinden yerel sunulan Manrope ve Cormorant Garamond yazı tipleri; Türkçe karakter desteği.
 - Vite çok sayfalı yapı (MPA): dört gerçek HTML girişi, ortak React bileşenleri ve standart sayfa bağlantıları. Ek router, backend veya mesaj gönderme servisi yoktur.
@@ -86,6 +86,10 @@ Gerçek ekran görüntüleri sağlandığında dosyayı `public/` altına ekleyi
 
 Renk, boşluk ve tipografi değerlerini stil dosyasındaki CSS değişkenlerinden düzenleyin. Statik sayfa başlığı/açıklaması her sayfanın HTML girişindedir; seçilen dildeki metadata `LanguageProvider` tarafından güncellenir. Gerçek alan adı sağlanmadan canonical veya sosyal paylaşım URL'si eklemeyin.
 
+## Stil yapısı
+
+React bileşenleri `src/App.module.css` dosyasını `styles` nesnesi olarak içe aktarır. Sınıf adları Vite tarafından yerelleştirilir; koşullu menü, ok ve proje kapağı sınıfları da bu nesneden seçilir. Ortak bileşenler, sayfa düzenleri ve dil uyarlamaları aynı modülde tutularak mevcut stil önceliği korunur. Tasarım değişkenleri, HTML sıfırlamaları ve temel tipografi belge genelinde geçerlidir. Sayfa içi bağlantı kimlikleri sabittir; CSS içindeki `#work-title` seçicisi açıkça `:global(...)` kullanır. Ek stil bağımlılığı yoktur.
+
 ## Kodun yapısı
 
 ```text
@@ -96,9 +100,9 @@ src/
   data/portfolio.ts    # Düzenlenebilir profil ve proje içeriği
   data/pages.ts        # Sayfa adresleri ve mevcut HTML girişinin kimliği
   pages/               # Dört sayfa bileşeni ve sayfa düzenleri
-  i18n/                # Altı dilin çevirileri, dil bağlamı ve dil stilleri
+  i18n/                # Altı dilin çevirileri ve dil bağlamı
   utils/links.ts       # İsteğe bağlı bağlantıların biçim kontrolü
-  styles.css           # Tasarım değişkenleri, bölümler, responsive kurallar
+  App.module.css       # Yerel stil sınıfları, tasarım değişkenleri ve responsive kurallar
 public/favicon.svg     # YK site simgesi
 index.html             # Anasayfa girişi
 projects/index.html    # Projelerim girişi

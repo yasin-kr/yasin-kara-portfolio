@@ -41,7 +41,7 @@ JavaScript ekip projesi; Team Lead. Vite, Axios ve TMDB kullanıldı. Weekly Tre
 
 ## Teknik kararlar
 
-- React + TypeScript + Vite; sade CSS, CSS değişkenleri ve anlaşılır bölüm bileşenleri.
+- React + TypeScript + Vite; CSS Modules, CSS değişkenleri ve anlaşılır bölüm bileşenleri.
 - Merkezi içerik: `src/data/portfolio.ts`.
 - Proje görseli için isteğe bağlı `image` alanı: `src`, `alt`, gerçek `width` ve `height`.
 - Proje adresleri için isteğe bağlı `repositoryUrl` ve `liveUrl`.
@@ -141,6 +141,15 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 
 - Altı dilde bölüm başlıklarının sonundaki noktalar, ana isim başlığının ve tipografik proje kapaklarının dekoratif noktaları kaldırıldı. Hakkımda monogramındaki nokta ve kullanılmayan nokta stilleri temizlendi.
 - Build, lint ve typecheck başarılı. Bu metin/dekorasyon değişikliği için tarayıcı test paketi yeniden çalıştırılmadı.
+
+## 22 Eylül 2026 — CSS Modules geçişi
+
+- Proje zaten React + TypeScript + Vite kullanıyordu; mevcut React bileşenleri ve dört HTML girişli yapı korundu.
+- Üç global stil dosyası `src/App.module.css` içinde mevcut öncelik sırasıyla birleştirildi. Bileşenlerin tüm stil sınıfları modül içe aktarımlarıyla bağlandı; mobil menü, ok yönü, sayfa ve proje kapağı varyantları da yerel sınıfları kullanır.
+- Tasarım değişkenleri, belge sıfırlamaları ve temel tipografi genel kapsamda kalır. Sayfa içi bağlantının kimliği değişmesin diye `#work-title` seçicisi açıkça global tanımlandı. Yeni bağımlılık eklenmedi.
+- Build, lint ve typecheck başarılı. Dört sayfa × üç dil (İngilizce, Arapça, Almanca) × üç genişlik (1440, 390, 320 px) için 36 üretim ekran görüntüsü önceki sürümle birebir aynı; yatay taşma yok.
+- Yerel karşılaştırma betiği `.verification/verify-modules.mjs`; sonuçlar `.verification/modules-before.json` ve `.verification/modules-after.json` içinde, Git kapsamı dışındadır.
+- Altı dil × dört sayfa × masaüstü/mobil için 408 tarayıcı kontrolü başarılı: dil kalıcılığı, mobil menü, doğrudan açılış, geri/ileri gezinme, sabit header, proje bağlantıları ve seçili senaryolarda axe erişilebilirlik taramaları geçti. Tarayıcı hatası yok. Modül sınıflarına uyarlanan yerel betik `.verification/verify-module-pages.mjs`, rapor `.verification/modules-pages-report.json`.
 
 ## Kullanıcıdan beklenen içerikler
 

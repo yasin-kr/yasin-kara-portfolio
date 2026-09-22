@@ -1,14 +1,20 @@
+import styles from "../App.module.css";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export function Toolkit() {
   const { toolkit, t, textDirection } = useLanguage();
   return (
     <section
-      className="toolkit page-width section"
+      className={
+        styles["toolkit"] + " " + styles["page-width"] + " " + styles["section"]
+      }
       aria-labelledby="toolkit-title"
     >
-      <div className="toolkit-intro">
-        <p className="eyebrow section-index" dir={textDirection}>
+      <div className={styles["toolkit-intro"]}>
+        <p
+          className={styles["eyebrow"] + " " + styles["section-index"]}
+          dir={textDirection}
+        >
           {t.ui.toolkitIndex}
         </p>
         <h2 id="toolkit-title" dir={textDirection}>
@@ -16,10 +22,10 @@ export function Toolkit() {
         </h2>
         <p dir={textDirection}>{t.ui.toolkitNote}</p>
       </div>
-      <div className="toolkit-groups">
+      <div className={styles["toolkit-groups"]}>
         {toolkit.map((group, index) => (
-          <div className="toolkit-group" key={group.name}>
-            <div className="toolkit-group-heading">
+          <div className={styles["toolkit-group"]} key={group.name}>
+            <div className={styles["toolkit-group-heading"]}>
               <span aria-hidden="true">0{index + 1}</span>
               <h3 dir={textDirection}>{group.name}</h3>
             </div>

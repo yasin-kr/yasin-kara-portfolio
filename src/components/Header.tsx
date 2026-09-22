@@ -1,3 +1,4 @@
+import styles from "../App.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
@@ -29,30 +30,30 @@ export function Header() {
   }, [isOpen]);
 
   return (
-    <header className="site-header">
-      <div className="header page-width">
+    <header className={styles["site-header"]}>
+      <div className={styles["header"] + " " + styles["page-width"]}>
         <a
           href={pagePaths.home}
-          className="wordmark"
+          className={styles["wordmark"]}
           aria-label={`${profile.name}, ${t.ui.home}`}
           onClick={() => setIsOpen(false)}
         >
           YK
         </a>
-        <div className="header-actions">
+        <div className={styles["header-actions"]}>
           <button
             ref={buttonRef}
             type="button"
-            className="menu-toggle"
+            className={styles["menu-toggle"]}
             aria-expanded={isOpen}
             aria-controls="primary-navigation"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span className="mobile-menu-label" dir={textDirection}>
+            <span className={styles["mobile-menu-label"]} dir={textDirection}>
               {isOpen ? t.ui.close : t.ui.menu}
             </span>
             <span
-              className={`menu-icon ${isOpen ? "is-open" : ""}`}
+              className={`${styles["menu-icon"]} ${isOpen ? styles["is-open"] : ""}`}
               aria-hidden="true"
             >
               <span />
@@ -63,7 +64,7 @@ export function Header() {
         </div>
         <nav
           id="primary-navigation"
-          className={`navigation ${isOpen ? "navigation--open" : ""}`}
+          className={`${styles.navigation} ${isOpen ? styles["navigation--open"] : ""}`}
           aria-label={t.ui.mainNavigation}
         >
           {navigation.map((item) => (
@@ -75,7 +76,7 @@ export function Header() {
               }
               onClick={() => setIsOpen(false)}
             >
-              <span className="header-link-label" dir={textDirection}>
+              <span className={styles["header-link-label"]} dir={textDirection}>
                 {item.label}
               </span>
             </a>

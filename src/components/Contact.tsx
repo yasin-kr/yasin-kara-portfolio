@@ -1,3 +1,4 @@
+import styles from "../App.module.css";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
 import { isCvUrl, isEmail, isWebUrl } from "../utils/links";
@@ -22,45 +23,57 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="contact page-width section"
+      className={
+        styles["contact"] + " " + styles["page-width"] + " " + styles["section"]
+      }
       aria-labelledby="contact-title"
       tabIndex={-1}
     >
-      <div className="contact-top">
-        <p className="eyebrow section-index" dir={textDirection}>
+      <div className={styles["contact-top"]}>
+        <p
+          className={styles["eyebrow"] + " " + styles["section-index"]}
+          dir={textDirection}
+        >
           {t.ui.contactIndex}
         </p>
-        <span className="availability">
+        <span className={styles["availability"]}>
           <span aria-hidden="true" />
           <span dir={textDirection}>{profile.availability}</span>
         </span>
       </div>
-      <div className="contact-layout">
+      <div className={styles["contact-layout"]}>
         <div>
-          <h1 className="page-title" id="contact-title" dir={textDirection}>
+          <h1
+            className={styles["page-title"]}
+            id="contact-title"
+            dir={textDirection}
+          >
             {t.ui.contactTitle[0]}
             <br />
             <em>{t.ui.contactTitle[1]}</em>
           </h1>
           {isEmail(contact.email) && (
-            <a className="contact-email" href={`mailto:${contact.email}`}>
+            <a
+              className={styles["contact-email"]}
+              href={`mailto:${contact.email}`}
+            >
               {contact.email}
               <Arrow />
             </a>
           )}
         </div>
-        <div className="contact-description">
-          <span className="contact-asterisk" aria-hidden="true">
+        <div className={styles["contact-description"]}>
+          <span className={styles["contact-asterisk"]} aria-hidden="true">
             ✳
           </span>
           <p dir={textDirection}>{profile.contactIntro}</p>
           {links.length > 0 && (
-            <div className="contact-links">
+            <div className={styles["contact-links"]}>
               {links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-link"
+                  className={styles["text-link"]}
                   target="_blank"
                   rel="noreferrer"
                 >

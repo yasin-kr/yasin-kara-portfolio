@@ -1,3 +1,4 @@
+import styles from "../App.module.css";
 import { About } from "../components/About";
 import { Toolkit } from "../components/Toolkit";
 import { Arrow } from "../components/Arrow";
@@ -13,12 +14,21 @@ export function AboutPage() {
     <>
       <About />
       <section
-        className="teamwork page-width section"
+        className={
+          styles["teamwork"] +
+          " " +
+          styles["page-width"] +
+          " " +
+          styles["section"]
+        }
         aria-labelledby="teamwork-title"
       >
-        <div className="teamwork-intro">
+        <div className={styles["teamwork-intro"]}>
           <div>
-            <p className="eyebrow section-index" dir={textDirection}>
+            <p
+              className={styles["eyebrow"] + " " + styles["section-index"]}
+              dir={textDirection}
+            >
               {t.pages.teamworkIndex}
             </p>
             <h2 id="teamwork-title" dir={textDirection}>
@@ -29,19 +39,19 @@ export function AboutPage() {
           </div>
           <p dir={textDirection}>{t.pages.teamworkIntro}</p>
         </div>
-        <div className="teamwork-projects">
+        <div className={styles["teamwork-projects"]}>
           {teamProjects.map((project) => (
-            <article className="teamwork-project" key={project.id}>
-              <p className="eyebrow" dir={textDirection}>
+            <article className={styles["teamwork-project"]} key={project.id}>
+              <p className={styles["eyebrow"]} dir={textDirection}>
                 {project.role}
               </p>
               <h3>{project.name}</h3>
-              <p className="teamwork-description" dir={textDirection}>
+              <p className={styles["teamwork-description"]} dir={textDirection}>
                 {project.contributions[0]}
               </p>
               <a
                 href={`${pagePaths.projects}#${project.id}`}
-                className="text-link"
+                className={styles["text-link"]}
               >
                 <span dir={textDirection}>{t.pages.viewProject}</span>
                 <Arrow />

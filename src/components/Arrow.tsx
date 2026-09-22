@@ -1,3 +1,4 @@
+import styles from "../App.module.css";
 type ArrowProps = {
   direction?: "up-right" | "down" | "right" | "up";
   className?: string;
@@ -6,7 +7,7 @@ type ArrowProps = {
 export function Arrow({ direction = "up-right", className = "" }: ArrowProps) {
   return (
     <svg
-      className={`arrow arrow--${direction} ${className}`}
+      className={`${styles.arrow} ${styles[`arrow--${direction}`] ?? ""} ${className}`}
       width="24"
       height="24"
       viewBox="0 0 24 24"

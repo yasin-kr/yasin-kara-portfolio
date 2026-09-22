@@ -1,3 +1,4 @@
+import styles from "./App.module.css";
 import { Header } from "./components/Header";
 import { HomePage } from "./pages/HomePage";
 import { ProjectsPage } from "./pages/ProjectsPage";
@@ -16,14 +17,14 @@ export default function App() {
     contact: ContactPage,
   }[currentPage];
   return (
-    <div id="top" className="site-shell">
-      <a className="skip-link" href="#main" dir={textDirection}>
+    <div id="top" className={styles["site-shell"]}>
+      <a className={styles["skip-link"]} href="#main" dir={textDirection}>
         {t.ui.skipToContent}
       </a>
       <Header />
       <main
         id="main"
-        className={`page-content page-${currentPage}`}
+        className={`${styles["page-content"]} ${styles[`page-${currentPage}`] ?? ""}`}
         tabIndex={-1}
       >
         <Content />

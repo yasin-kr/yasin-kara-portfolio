@@ -1,3 +1,4 @@
+import styles from "../App.module.css";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
 import { currentPage, pagePaths } from "../data/pages";
@@ -5,7 +6,7 @@ import { currentPage, pagePaths } from "../data/pages";
 export function Footer() {
   const { navigation, profile, t, textDirection } = useLanguage();
   return (
-    <footer className="footer page-width">
+    <footer className={styles["footer"] + " " + styles["page-width"]}>
       <p>
         © {new Date().getFullYear()} {profile.name}
       </p>
@@ -23,7 +24,7 @@ export function Footer() {
           </a>
         ))}
       </nav>
-      <a href="#top" className="back-top">
+      <a href="#top" className={styles["back-top"]}>
         <span dir={textDirection}>{t.ui.backToTop}</span>
         <Arrow direction="up" />
       </a>

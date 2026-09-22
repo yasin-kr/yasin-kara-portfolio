@@ -1,3 +1,4 @@
+import styles from "../App.module.css";
 import type { Project } from "../data/portfolio";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
@@ -8,7 +9,7 @@ export function ProjectCover({ project }: { project: Project }) {
   const [primaryTitle, secondaryTitle] = project.coverTitle ?? [project.name];
   if (project.image) {
     return (
-      <div className={`project-image project-image--${project.cover}`}>
+      <div className={styles["project-image"]}>
         <img
           src={project.image.src}
           alt={project.image.alt}
@@ -23,20 +24,28 @@ export function ProjectCover({ project }: { project: Project }) {
 
   return (
     <div
-      className={`project-cover project-cover--${project.cover}`}
+      className={`${styles["project-cover"]} ${styles[`project-cover--${project.cover}`]}`}
       role="img"
       aria-label={t.ui.coverDescription.replace("{name}", project.name)}
     >
-      <div className="cover-top" aria-hidden="true">
+      <div className={styles["cover-top"]} aria-hidden="true">
         <span dir={textDirection}>{t.ui.coverSelectedWork}</span>
         <span>{project.number}</span>
       </div>
-      <div className="cover-art" aria-hidden="true">
+      <div className={styles["cover-art"]} aria-hidden="true">
         {project.cover === "taskpro" && (
           <>
-            <div className="cover-outline cover-outline--one" />
-            <div className="cover-outline cover-outline--two" />
-            <span className="cover-title">
+            <div
+              className={
+                styles["cover-outline"] + " " + styles["cover-outline--one"]
+              }
+            />
+            <div
+              className={
+                styles["cover-outline"] + " " + styles["cover-outline--two"]
+              }
+            />
+            <span className={styles["cover-title"]}>
               {primaryTitle}
               <span>{secondaryTitle}</span>
             </span>
@@ -44,9 +53,17 @@ export function ProjectCover({ project }: { project: Project }) {
         )}
         {project.cover === "moneyguard" && (
           <>
-            <div className="money-circle money-circle--one" />
-            <div className="money-circle money-circle--two" />
-            <span className="cover-title">
+            <div
+              className={
+                styles["money-circle"] + " " + styles["money-circle--one"]
+              }
+            />
+            <div
+              className={
+                styles["money-circle"] + " " + styles["money-circle--two"]
+              }
+            />
+            <span className={styles["cover-title"]}>
               {primaryTitle}
               {secondaryTitle && (
                 <>
@@ -59,16 +76,16 @@ export function ProjectCover({ project }: { project: Project }) {
         )}
         {project.cover === "cinemania" && (
           <>
-            <div className="cinema-frame" />
-            <span className="cover-title">
+            <div className={styles["cinema-frame"]} />
+            <span className={styles["cover-title"]}>
               {primaryTitle}
               <span>{secondaryTitle}</span>
             </span>
-            <span className="cinema-star">✳</span>
+            <span className={styles["cinema-star"]}>✳</span>
           </>
         )}
       </div>
-      <div className="cover-bottom" aria-hidden="true">
+      <div className={styles["cover-bottom"]} aria-hidden="true">
         <span dir={textDirection}>{t.ui.projectCover}</span>
         <span>{project.name}</span>
       </div>
@@ -83,24 +100,24 @@ function ProjectArticle({ project }: { project: Project }) {
   return (
     <article
       id={project.id}
-      className="project"
+      className={styles["project"]}
       aria-labelledby={`${project.id}-title`}
     >
       <ProjectCover project={project} />
-      <div className="project-info">
-        <div className="project-meta">
-          <span className="project-number">/{project.number}</span>
-          <span className="eyebrow" dir={textDirection}>
+      <div className={styles["project-info"]}>
+        <div className={styles["project-meta"]}>
+          <span className={styles["project-number"]}>/{project.number}</span>
+          <span className={styles["eyebrow"]} dir={textDirection}>
             {project.role}
           </span>
         </div>
         <h2 id={`${project.id}-title`}>{project.name}</h2>
-        <p className="project-summary" dir={textDirection}>
+        <p className={styles["project-summary"]} dir={textDirection}>
           {project.summary}
         </p>
         {project.technologies.length > 0 && (
           <ul
-            className="technology-list"
+            className={styles["technology-list"]}
             aria-label={t.ui.projectTechnologies.replace(
               "{name}",
               project.name,
@@ -112,10 +129,10 @@ function ProjectArticle({ project }: { project: Project }) {
           </ul>
         )}
         {project.contributions.length > 0 && (
-          <details className="contribution">
+          <details className={styles["contribution"]}>
             <summary>
               <span dir={textDirection}>{t.ui.contribution}</span>
-              <span className="details-icon" aria-hidden="true" />
+              <span className={styles["details-icon"]} aria-hidden="true" />
             </summary>
             <ul dir={textDirection}>
               {project.contributions.map((item) => (
@@ -125,10 +142,10 @@ function ProjectArticle({ project }: { project: Project }) {
           </details>
         )}
         {(hasRepository || hasLiveSite) && (
-          <div className="project-links">
+          <div className={styles["project-links"]}>
             {hasLiveSite && (
               <a
-                className="text-link"
+                className={styles["text-link"]}
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -139,7 +156,7 @@ function ProjectArticle({ project }: { project: Project }) {
             )}
             {hasRepository && (
               <a
-                className="text-link"
+                className={styles["text-link"]}
                 href={project.repositoryUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -160,24 +177,33 @@ export function SelectedWork() {
   return (
     <section
       id="work"
-      className="work page-width section"
+      className={
+        styles["work"] + " " + styles["page-width"] + " " + styles["section"]
+      }
       aria-labelledby="work-title"
       tabIndex={-1}
     >
-      <div className="section-heading">
+      <div className={styles["section-heading"]}>
         <div>
-          <p className="eyebrow section-index" dir={textDirection}>
+          <p
+            className={styles["eyebrow"] + " " + styles["section-index"]}
+            dir={textDirection}
+          >
             {t.ui.workIndex}
           </p>
-          <h1 className="page-title" id="work-title" dir={textDirection}>
+          <h1
+            className={styles["page-title"]}
+            id="work-title"
+            dir={textDirection}
+          >
             {t.ui.workTitle[0]} <em>{t.ui.workTitle[1]}</em>
           </h1>
         </div>
-        <p className="section-note" dir={textDirection}>
+        <p className={styles["section-note"]} dir={textDirection}>
           {t.ui.workNote}
         </p>
       </div>
-      <div className="project-list">
+      <div className={styles["project-list"]}>
         {projects.map((project) => (
           <ProjectArticle key={project.id} project={project} />
         ))}

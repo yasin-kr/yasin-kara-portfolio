@@ -1,3 +1,4 @@
+import styles from "../App.module.css";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { languages } from "../i18n/languages";
@@ -65,7 +66,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
 
   return (
     <div
-      className="language-selector"
+      className={styles["language-selector"]}
       ref={containerRef}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget))
@@ -75,7 +76,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
       <button
         ref={triggerRef}
         type="button"
-        className="language-trigger"
+        className={styles["language-trigger"]}
         aria-label={`${t.ui.selectLanguage}: ${selected.name}`}
         aria-haspopup="menu"
         aria-expanded={isOpen}
@@ -91,7 +92,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
         }}
       >
         <img
-          className="language-flag"
+          className={styles["language-flag"]}
           src={`/flags/${selected.flag}.svg`}
           width="21"
           height="14"
@@ -99,7 +100,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
         />
         <span>{locale.toUpperCase()}</span>
         <svg
-          className="language-chevron"
+          className={styles["language-chevron"]}
           width="10"
           height="6"
           viewBox="0 0 10 6"
@@ -111,7 +112,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
       </button>
       {isOpen && (
         <div
-          className="language-menu"
+          className={styles["language-menu"]}
           id="language-menu"
           role="menu"
           aria-label={t.ui.selectLanguage}
@@ -120,7 +121,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
           {languages.map((language, index) => (
             <button
               type="button"
-              className="language-option"
+              className={styles["language-option"]}
               key={language.code}
               data-locale={language.code}
               role="menuitemradio"
@@ -132,7 +133,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
               onClick={() => choose(language.code)}
             >
               <img
-                className="language-flag"
+                className={styles["language-flag"]}
                 src={`/flags/${language.flag}.svg`}
                 width="21"
                 height="14"
@@ -141,7 +142,7 @@ export function LanguageSelector({ onOpen }: { onOpen: () => void }) {
               <span lang={language.code} dir={language.direction}>
                 {language.name}
               </span>
-              <span className="language-check" aria-hidden="true">
+              <span className={styles["language-check"]} aria-hidden="true">
                 {locale === language.code ? "✓" : ""}
               </span>
             </button>
