@@ -11,7 +11,6 @@ export default defineConfig({
         projects: fileURLToPath(
           new URL("./projects/index.html", import.meta.url),
         ),
-        about: fileURLToPath(new URL("./about/index.html", import.meta.url)),
         contact: fileURLToPath(
           new URL("./contact/index.html", import.meta.url),
         ),

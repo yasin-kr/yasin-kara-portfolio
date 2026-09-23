@@ -1,18 +1,20 @@
 import styles from "../App.module.css";
 import { Hero } from "../components/Hero";
+import { ScrollStory } from "../components/ScrollStory/ScrollStory";
 import { ProjectCover } from "../components/SelectedWork";
 import { Arrow } from "../components/Arrow";
 import { useLanguage } from "../i18n/LanguageContext";
 import { pagePaths } from "../data/pages";
 
 export function HomePage() {
-  const { profile, projects, t, textDirection } = useLanguage();
+  const { projects, t, textDirection } = useLanguage();
   return (
     <>
       <Hero />
+      <ScrollStory />
       <section
         id="featured-work"
-        className={styles["page-width"] + " " + styles["section"]}
+        className={styles["featured-work"] + " " + styles["section"]}
         aria-labelledby="featured-title"
         tabIndex={-1}
       >
@@ -58,41 +60,6 @@ export function HomePage() {
               </p>
             </article>
           ))}
-        </div>
-      </section>
-      <section
-        className={styles["home-about"] + " " + styles["section"]}
-        aria-labelledby="home-about-title"
-      >
-        <div
-          className={styles["page-width"] + " " + styles["home-about-layout"]}
-        >
-          <div>
-            <p
-              className={styles["eyebrow"] + " " + styles["section-index"]}
-              dir={textDirection}
-            >
-              {t.ui.aboutIndex}
-            </p>
-            <h2 id="home-about-title" dir={textDirection}>
-              {t.ui.aboutTitle[0]}
-              <br />
-              <em>{t.ui.aboutTitle[1]}</em>
-            </h2>
-          </div>
-          <div className={styles["home-about-copy"]}>
-            <p dir={textDirection}>{profile.about[0]}</p>
-            <div className={styles["home-about-links"]}>
-              <a href={pagePaths.about} className={styles["text-link"]}>
-                <span dir={textDirection}>{t.pages.readAbout}</span>
-                <Arrow />
-              </a>
-              <a href={pagePaths.contact} className={styles["text-link"]}>
-                <span dir={textDirection}>{t.ui.getInTouch}</span>
-                <Arrow />
-              </a>
-            </div>
-          </div>
         </div>
       </section>
     </>

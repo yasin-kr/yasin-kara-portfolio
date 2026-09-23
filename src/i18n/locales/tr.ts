@@ -1,55 +1,81 @@
 import type { Translation } from "../types";
 
 const tr: Translation = {
+  theme: { lightMode: "Açık tema" },
+  contactForm: {
+  "title": "Mesaj oluşturun.",
+  "name": "Ad-Soyad",
+  "email": "E-posta adresiniz",
+  "subject": "Konu",
+  "message": "Mesajınız",
+  "send": "Gönder"
+},
+  story: {
+    title: "Görünenin arkasında",
+    scenes: {
+      "my-perspective": {
+        title: "İyi bir çözüm, doğru soruyla başlar.",
+        description: "Etkili bir ürünün temeli, ihtiyacın doğru tanımlanmasıdır. Gereksiz adımların azaltılması ve süreçlerin sadeleştirilmesi, tasarım ve geliştirme kararlarına yön verir.",
+        imageAlt:
+          "Koyu bir labirentin içinden kıvrılarak geçen altın ışık izi, sağ üstteki düzenli bağlantı yapısına ulaşıyor.",
+      },
+      "behind-scenes": {
+        title: "Görünenin arkasında bir sistem var.",
+        description: "Her etkileşimin arkasında veri akışı, uygulama mantığı ve birbirine bağlı bileşenler yer alır. Bu parçaların uyumu, görsel tasarımı çalışan bir ürüne dönüştürür.",
+        imageAlt:
+          "Koyu mavi zeminde ışıklı veri yolları, şeffaf katmanlardan geçerek bir arayüz panelinde birleşiyor.",
+      },
+      "first-touch": {
+        title: "Karmaşık süreçler, anlaşılır arayüzler.",
+        description: "Açık bir bilgi düzeni ve tutarlı etkileşimler, kullanıcıya yol gösterir. Aranan içeriğe ulaşmak ve bir sonraki adımı anlamak, deneyimin doğal bir parçasıdır.",
+        imageAlt:
+          "Açık zemin üzerinde düzenli mavi arayüz kartları ve yanlarında geometrik parçalar.",
+      },
+      "first-look": {
+        title: "İlk izlenim tesadüf değildir.",
+        description: "Renk, ışık ve boşluk; arayüzün karakterini daha ilk bakışta belirler. Dengeli bir görsel dil, içeriği öne çıkarır ve deneyime bütünlük kazandırır.",
+        imageAlt:
+          "Koyu lacivert bir mekânda mavi ve altın ışıkla aydınlanan cam ve metal yüzeyler.",
+      },
+    },
+  },
   profile: {
     role: "Full Stack Geliştirici",
-    intro:
-      "React, TypeScript ve Node.js ile özenle düşünülmüş web deneyimleri geliştiriyorum.",
-    availability: "Geliştirici pozisyonlarına açığım",
-    contactIntro:
-      "Katkı sunabileceğim, öğrenmeye devam edebileceğim ve bir ekiple birlikte üretebileceğim bir yazılım geliştirme pozisyonu arıyorum.",
-    about: [
-      "Daha önce üretim vardiya mühendisliği yapmış bir lojistik mühendisiyim. Operasyonları düzenlemek, sorumluluk almak ve bir ekiple çalışmak, yazılım geliştirmeye yaklaşımımı şekillendiriyor.",
-      "GoIT Full Stack Developer eğitimini tamamladım ve şimdi yazılım alanında bir kariyer hedefliyorum. React ve TypeScript ile çalışıyor, uygulamalı projelerle Node.js becerilerimi geliştirmeye devam ediyorum.",
-    ],
+    intro: "React, TypeScript ve Node.js ile tasarımın işlevsellikle buluştuğu web uygulamaları.",
+    availability: "İletişim",
+    contactIntro: "Proje ve iş birliği talepleri için iletişim formu üzerinden mesaj iletilebilir.",
+    about: ["Proje geliştirme deneyimi."],
     education: {
       name: "GoIT Full Stack Developer",
       completed: "14 Ağustos 2026",
     },
   },
   projects: {
-    taskpro: {
-      role: "Full Stack Geliştirici",
-      summary: "Full Stack Geliştirici olarak katkıda bulunduğum bir proje.",
-      contributions: [],
-    },
-    "money-guard": {
-      role: "Ekip Lideri",
-      summary: "Yedi kişilik bir ekiple geliştirilen React ve Redux projesi.",
-      contributions: [
-        "Yedi kişilik ekibe liderlik ettim; Redux Toolkit ile durum yönetimi ve token kalıcılığı üzerinde çalıştım.",
-        "API istemcisi, kimlik doğrulama ve işlem, kategori, istatistik ile döviz verilerinden sorumluydum.",
-      ],
-    },
-    cinemania: {
-      role: "Ekip Lideri",
-      summary:
-        "Vite, Axios ve TMDB kullanılarak geliştirilen bir JavaScript ekip projesi.",
-      contributions: [
-        "Ekibe liderlik ettim; haftanın trendleri bölümü, film detay penceresi ve arayüz iyileştirmeleri üzerinde çalıştım.",
-        "Proje genelinde performans iyileştirmeleri yaptım.",
-      ],
-    },
+  "taskpro": {
+    "role": "Full Stack Geliştirici",
+    "summary": "Full Stack geliştirme kapsamında tamamlanan bir ekip projesi.",
+    "contributions": ["Board ve column oluşturma, görüntüleme, güncelleme ve silme akışları; dashboard bileşenlerinin backend API entegrasyonu.","Dashboard ve kart entegrasyonu, etiket bazlı filtreleme, tema değiştirme ve görev çalışma alanlarının kalıcılığı."]
   },
-  navigation: { work: "Projelerim", about: "Hakkımda", contact: "İletişim" },
+  "money-guard": {
+    "role": "Ekip Lideri",
+    "summary": "Altı kişilik bir ekiple geliştirilen React ve Redux projesi.",
+    "contributions": ["Finans paneli, kimlik doğrulama, korumalı rotalar, işlem yönetimi, bakiye ve istatistik geliştirmesinin koordinasyonu.","Asenkron durum yönetimi, oturum kalıcılığı, yeniden kullanılabilir API istemcileri, form doğrulama ve grafiklerle raporlama."]
+  },
+  "cinemania": {
+    "role": "Ekip Lideri",
+    "summary": "Beş kişilik bir ekiple geliştirilen JavaScript ve TMDB projesi.",
+    "contributions": ["Ekip geliştirme sürecinin koordinasyonu; TMDB ile film keşfi, sayfalama, film detay penceresi ve duyarlı arayüz.","Haftanın trendleri bölümü, arayüz ve performans iyileştirmelerine katkı."]
+  }
+},
+  navigation: { work: "Projeler", about: "Profil", contact: "İletişim" },
   pages: {
     allProjects: "Tüm projeleri incele",
     viewProject: "Projeyi incele",
-    readAbout: "Beni daha yakından tanı",
+    readAbout: "Projeye katkılar",
     teamworkIndex: "EKİP İÇİNDE ÇALIŞMA",
     teamworkTitle: ["Birlikte üretmek", "Sorumluluk almak"],
     teamworkIntro:
-      "Mühendislik geçmişim, ekip içinde çalışma biçimime de yansıyor. Bu projelerde ekip liderliğini aktif geliştirme sorumluluklarıyla birlikte üstlendim.",
+      "Proje geliştirme deneyimi.",
   },
   toolkit: {
     frontend: "Ön Yüz",
@@ -68,29 +94,29 @@ const tr: Translation = {
     heroEyebrow: "Bir geliştiricinin bakış açısı",
     viewWork: "Seçili projeleri incele",
     getInTouch: "İletişime geç",
-    heroFootnote: "Mühendislikten gelen birikim. Yeni bir yön.",
+    heroFootnote: "Net tasarım. Tutarlı deneyim.",
     exploreBelow: "Keşfetmeye devam et",
-    workIndex: "01 / PROJELER",
+    workIndex: "PROJELER",
     workTitle: ["Seçili", "projeler"],
     workNote: "Farklı projeler. Üreterek öğrenmeye duyulan ortak bağlılık.",
     coverSelectedWork: "YK / SEÇİLİ PROJELER",
     projectCover: "PROJE KAPAĞI",
     coverDescription: "{name} için tipografik proje kapağı",
     projectTechnologies: "{name} projesinde kullanılan teknolojiler",
-    contribution: "Katkılarım",
+    contribution: "Projeye katkılar",
     liveSite: "Siteyi ziyaret et",
-    aboutIndex: "02 / KISACA BEN",
+    aboutIndex: "Profil bilgileri",
     aboutTitle: ["Farklı bir yol", "Aynı merak"],
     aboutCaption: "MÜHENDİSLİKTEN → YAZILIMA",
     storyLead:
       "Operasyonları koordine etmekten web’in parçalarını bir araya getirmeye.",
     nextChapter: "YENİ BİR SAYFA",
-    toolkitIndex: "KULLANDIĞIM ARAÇLAR",
+    toolkitIndex: "TEKNOLOJİLER",
     toolkitTitle: ["Teknik", "beceriler"],
     toolkitNote:
-      "Projelerle kazandığım pratik deneyim. Her zaman üzerine yenisini ekliyorum.",
-    contactIndex: "03 / SIRADA NE VAR?",
-    contactTitle: ["Birlikte", "çalışalım"],
+      "Proje geliştirme deneyimi.",
+    contactIndex: "SIRADA NE VAR?",
+    contactTitle: ["İletişim","ve iş birliği"],
     viewCv: "Özgeçmişi görüntüle",
     backToTop: "Başa dön",
     metaDescription:

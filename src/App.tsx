@@ -2,7 +2,6 @@ import styles from "./App.module.css";
 import { Header } from "./components/Header";
 import { HomePage } from "./pages/HomePage";
 import { ProjectsPage } from "./pages/ProjectsPage";
-import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { currentPage } from "./data/pages";
 import { Footer } from "./components/Footer";
@@ -13,7 +12,6 @@ export default function App() {
   const Content = {
     home: HomePage,
     projects: ProjectsPage,
-    about: AboutPage,
     contact: ContactPage,
   }[currentPage];
   return (

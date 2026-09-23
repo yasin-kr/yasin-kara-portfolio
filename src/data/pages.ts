@@ -1,7 +1,6 @@
 export const pagePaths = {
   home: "/",
   projects: "/projects/",
-  about: "/about/",
   contact: "/contact/",
 } as const;
 

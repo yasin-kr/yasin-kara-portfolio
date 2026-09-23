@@ -1,8 +1,23 @@
-import type { Profile, Project } from "../data/portfolio";
+import type { Profile, Project, StorySceneId } from "../data/portfolio";
+
+export interface StorySceneCopy {
+  title: string;
+  description: string;
+  imageAlt: string;
+}
 
 export type Locale = "en" | "tr" | "es" | "ar" | "ru" | "de";
 
 export interface Translation {
+  theme: { lightMode: string };
+  contactForm: {
+    title: string; name: string; email: string; subject: string; message: string;
+    send: string;
+  };
+  story: {
+    title: string;
+    scenes: Partial<Record<StorySceneId, StorySceneCopy>>;
+  };
   profile: Pick<
     Profile,
     "role" | "intro" | "availability" | "contactIntro" | "about" | "education"

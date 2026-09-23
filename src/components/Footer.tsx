@@ -24,10 +24,10 @@ export function Footer() {
           </a>
         ))}
       </nav>
-      <a href="#top" className={styles["back-top"]}>
+      {currentPage !== "contact" && <a href="#top" className={styles["back-top"]}>
         <span dir={textDirection}>{t.ui.backToTop}</span>
         <Arrow direction="up" />
-      </a>
+      </a>}
     </footer>
   );
 }

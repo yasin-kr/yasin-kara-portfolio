@@ -103,10 +103,19 @@ function ProjectArticle({ project }: { project: Project }) {
       className={styles["project"]}
       aria-labelledby={`${project.id}-title`}
     >
-      <ProjectCover project={project} />
+      {hasLiveSite ? (
+        <a
+          href={project.liveUrl}
+          className={styles["project-visual-link"]}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${project.name} — ${t.ui.liveSite}`}
+        >
+          <ProjectCover project={project} />
+        </a>
+      ) : <ProjectCover project={project} />}
       <div className={styles["project-info"]}>
         <div className={styles["project-meta"]}>
-          <span className={styles["project-number"]}>/{project.number}</span>
           <span className={styles["eyebrow"]} dir={textDirection}>
             {project.role}
           </span>
@@ -145,10 +154,12 @@ function ProjectArticle({ project }: { project: Project }) {
           <div className={styles["project-links"]}>
             {hasLiveSite && (
               <a
-                className={styles["text-link"]}
+                className={styles["project-site-button"]}
                 href={project.liveUrl}
+                title={`${project.name} — ${t.ui.liveSite}`}
+                aria-label={`${project.name} — ${t.ui.liveSite}`}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 <span dir={textDirection}>{t.ui.liveSite}</span>
                 <Arrow />

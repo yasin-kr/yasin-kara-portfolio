@@ -9,16 +9,20 @@ export function Hero() {
   return (
     <section
       id="home"
-      className={styles["hero"] + " " + styles["page-width"]}
+      className={styles["hero"] + " " + styles["hero-art"]}
       aria-labelledby="hero-title"
     >
+      <img
+        className={styles["hero-backdrop"]}
+        src="/images/background-hero.png"
+        alt=""
+        width={1672}
+        height={941}
+        fetchPriority="high"
+      />
       <div className={styles["hero-eyebrow"]}>
         <span className={styles["eyebrow"]} dir={textDirection}>
           {t.ui.heroEyebrow}
-        </span>
-        <span className={styles["availability"]}>
-          <span aria-hidden="true" />
-          <span dir={textDirection}>{profile.availability}</span>
         </span>
       </div>
       <h1 id="hero-title" className={styles["hero-name"]}>
@@ -52,10 +56,6 @@ export function Hero() {
         <span className={styles["eyebrow"]} dir={textDirection}>
           {t.ui.heroFootnote}
         </span>
-        <a href="#featured-work" className={styles["scroll-link"]}>
-          <span dir={textDirection}>{t.ui.exploreBelow}</span>
-          <Arrow direction="down" />
-        </a>
       </div>
     </section>
   );

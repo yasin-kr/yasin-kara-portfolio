@@ -1,7 +1,8 @@
 import styles from "../App.module.css";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Arrow } from "./Arrow";
-import { isCvUrl, isEmail, isWebUrl } from "../utils/links";
+import { ContactForm } from "./ContactForm";
+import { isCvUrl, isWebUrl } from "../utils/links";
 
 export function Contact() {
   const { profile, t, textDirection } = useLanguage();
@@ -37,7 +38,6 @@ export function Contact() {
           {t.ui.contactIndex}
         </p>
         <span className={styles["availability"]}>
-          <span aria-hidden="true" />
           <span dir={textDirection}>{profile.availability}</span>
         </span>
       </div>
@@ -52,15 +52,6 @@ export function Contact() {
             <br />
             <em>{t.ui.contactTitle[1]}</em>
           </h1>
-          {isEmail(contact.email) && (
-            <a
-              className={styles["contact-email"]}
-              href={`mailto:${contact.email}`}
-            >
-              {contact.email}
-              <Arrow />
-            </a>
-          )}
         </div>
         <div className={styles["contact-description"]}>
           <span className={styles["contact-asterisk"]} aria-hidden="true">
@@ -85,6 +76,7 @@ export function Contact() {
           )}
         </div>
       </div>
+      <ContactForm />
     </section>
   );
 }

@@ -2,6 +2,7 @@ import styles from "../App.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
+import { ThemeToggle } from "./ThemeToggle";
 import { currentPage, pagePaths } from "../data/pages";
 
 export function Header() {
@@ -38,7 +39,7 @@ export function Header() {
           aria-label={`${profile.name}, ${t.ui.home}`}
           onClick={() => setIsOpen(false)}
         >
-          YK
+          <img src="/images/logo_yk.png" alt="YK" width={1254} height={1254} />
         </a>
         <div className={styles["header-actions"]}>
           <button
@@ -61,6 +62,7 @@ export function Header() {
             </span>
           </button>
           <LanguageSelector onOpen={() => setIsOpen(false)} />
+          <ThemeToggle />
         </div>
         <nav
           id="primary-navigation"

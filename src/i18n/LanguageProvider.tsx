@@ -17,13 +17,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const titles = {
       home: t.ui.home,
       projects: t.navigation.work,
-      about: t.navigation.about,
       contact: t.navigation.contact,
     };
     const descriptions = {
       home: t.ui.metaDescription,
       projects: t.ui.workNote,
-      about: t.profile.about.join(" "),
       contact: t.profile.contactIntro,
     };
     document.title =
@@ -63,7 +61,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     navigation: [
       { label: t.ui.home, href: pagePaths.home },
       { label: t.navigation.work, href: pagePaths.projects },
-      { label: t.navigation.about, href: pagePaths.about },
       { label: t.navigation.contact, href: pagePaths.contact },
     ],
     toolkit: toolkit.map((group, index) => ({

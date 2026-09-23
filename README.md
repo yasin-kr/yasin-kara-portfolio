@@ -1,6 +1,6 @@
 # Yasin Kara Portfolio
 
-Yasin Kara'nın projelerini, teknik çalışmalarını ve mühendislikten yazılıma geçişini sunan, altı dil destekli dört sayfalık geliştirici portfolyosu. Varsayılan dil İngilizcedir.
+Yasin Kara'nın projelerini ve teknik çalışmalarını sunan, altı dil ve açık/koyu tema destekli üç sayfalık geliştirici portfolyosu. Varsayılan dil İngilizce, tema koyudur.
 
 ## Kurulum ve çalıştırma
 
@@ -31,20 +31,19 @@ npm run preview
 - React, TypeScript ve Vite; CSS Modules.
 - Koyu lacivert zemin (#000d15, #05172f), arduvaz/antrasit/gri yardımcı yüzeyler (#2d3c4c, #2f2f2b, #525453), kırık beyaz yazı ve şampanya vurgular.
 - Fontsource paketlerinden yerel sunulan Manrope ve Cormorant Garamond yazı tipleri; Türkçe karakter desteği.
-- Vite çok sayfalı yapı (MPA): dört gerçek HTML girişi, ortak React bileşenleri ve standart sayfa bağlantıları. Ek router, backend veya mesaj gönderme servisi yoktur.
+- Vite çok sayfalı yapı (MPA): üç gerçek HTML girişi, ortak React bileşenleri ve standart sayfa bağlantıları. Ek router, backend veya mesaj gönderme servisi yoktur.
 
 ## Sayfalar ve yayınlama
 
 | Sayfa | Adres | İçerik |
 | --- | --- | --- |
-| Anasayfa | `/` | Tanıtım, üç proje önizlemesi, kısa hakkında özeti |
-| Projelerim | `/projects/` | Proje kapakları, roller, teknolojiler, kişisel katkılar |
-| Hakkımda | `/about/` | Mühendislikten yazılıma geçiş, eğitim, ekip deneyimi, teknik araçlar |
-| İletişim | `/contact/` | İletişim daveti ve sağlandığında gerçek bağlantılar |
+| Anasayfa | `/` | Tanıtım, dört sahneli anlatım ve üç proje önizlemesi |
+| Projeler | `/projects/` | Proje görselleri, canlı site bağlantıları, roller, teknolojiler ve katkılar |
+| İletişim | `/contact/` | İletişim formu tasarımı; backend bağlanana kadar gönderim pasif |
 
 Sayfa adresleri `src/data/pages.ts`, sayfa bileşenleri `src/pages/` içinde bulunur. Her HTML girişindeki `data-page`, gösterilecek sayfayı belirler. Header ve footer ortak kullanılır; aktif sayfa `aria-current="page"` ile belirtilir. Dil seçimi aynı origin üzerindeki tüm sayfalarda localStorage üzerinden korunur.
 
-`npm run build` çıktısı `dist/index.html`, `dist/projects/index.html`, `dist/about/index.html` ve `dist/contact/index.html` dosyalarını içerir. Statik yayın ortamına **dist klasörünün tamamını** yükleyin; URL kökünden yayınlayın ve dizinler için `index.html` sunumunu etkin tutun. Tüm adresleri anasayfaya yönlendiren SPA rewrite kuralı eklemeyin. Gerçek HTML dosyaları sayesinde sayfa yenileme ve doğrudan bağlantılar sunucu tarafında özel router gerektirmez. Alt klasör altında yayınlanacaksa Vite `base` ve `pagePaths` değerleri birlikte uyarlanmalıdır.
+`npm run build` çıktısı `dist/index.html`, `dist/projects/index.html` ve `dist/contact/index.html` dosyalarını içerir. Statik yayın ortamına **dist klasörünün tamamını** yükleyin; URL kökünden yayınlayın ve dizinler için `index.html` sunumunu etkin tutun. Tüm adresleri anasayfaya yönlendiren SPA rewrite kuralı eklemeyin. Gerçek HTML dosyaları sayesinde sayfa yenileme ve doğrudan bağlantılar sunucu tarafında özel router gerektirmez. Alt klasör altında yayınlanacaksa Vite `base` ve `pagePaths` değerleri birlikte uyarlanmalıdır.
 
 Üretim önizlemesi: `npm.cmd run preview` → `http://127.0.0.1:4173/`.
 
@@ -60,6 +59,8 @@ Profil, proje ve teknoloji verilerinin merkezi `src/data/portfolio.ts` dosyasıd
 
 ## Dil desteği
 
+Tema tercihi header'daki anahtarla değiştirilir ve `yasin-kara-theme` localStorage anahtarında saklanır. Kaydırmalı anlatım varsayılan olarak hareketlidir; sistemin azaltılmış hareket tercihi etkinse sabit görünür. Ayrıntılar `docs/scroll-story.md` içindedir.
+
 Sağ üstteki bayraklı menüden İngilizce, Türkçe, İspanyolca, Arapça, Rusça veya Almanca seçilebilir. İlk ziyarette tarayıcı dilinden bağımsız olarak İngilizce açılır. Seçim `yasin-kara-language` localStorage anahtarında saklanır ve yenilemede korunur. Kayıt geçersizse İngilizceye dönülür; depolama engelliyse seçim yalnızca geçerli sayfada korunur.
 
 - `src/i18n/locales/en.ts`, ortak İngilizce profil ve proje içeriklerini `src/data/portfolio.ts` dosyasından alır.
@@ -70,7 +71,7 @@ Sağ üstteki bayraklı menüden İngilizce, Türkçe, İspanyolca, Arapça, Rus
 - Bayraklar yerel SVG dosyalarıdır: İngilizce için Birleşik Krallık, Türkçe için Türkiye, İspanyolca için İspanya, Arapça için BAE, Rusça için Rusya, Almanca için Almanya. Seçenekler dilin kendi adıyla da gösterilir.
 - Dil menüsü ok tuşları, Home/End, Enter/Space, Tab ve Escape ile kullanılabilir; dışarı tıklayınca kapanır.
 
-Header logosu `YK` monogramıdır. Menüde sıra numarası yoktur; Anasayfa, Projelerim, Hakkımda ve İletişim bağlantıları seçilen dilde gösterilir. Header üstte sabit kalır; logoda yalnızca renk, sayfa bağlantılarında soldan sağa alt çizgi hover efekti bulunur.
+Header logosu `YK` monogramıdır. Menüde ve küçük bölüm başlıklarında sıra numarası yoktur; Anasayfa, Projelerim ve İletişim bağlantıları seçilen dilde gösterilir. Header üstte sabit kalır; logoda yalnızca renk, sayfa bağlantılarında soldan sağa alt çizgi hover efekti bulunur.
 
 ## Bağlantı ve görselleri ekleme
 
@@ -96,21 +97,24 @@ React bileşenleri `src/App.module.css` dosyasını `styles` nesnesi olarak içe
 src/
   App.tsx              # Ortak sayfa düzeni ve HTML girişine göre sayfa seçimi
   main.tsx             # React ve yerel fontların başlangıcı
-  components/          # Header, Hero, SelectedWork, About, Toolkit, Contact, Footer
+  components/          # Header, Hero, ScrollStory, SelectedWork, Contact, Footer
   data/portfolio.ts    # Düzenlenebilir profil ve proje içeriği
   data/pages.ts        # Sayfa adresleri ve mevcut HTML girişinin kimliği
-  pages/               # Dört sayfa bileşeni ve sayfa düzenleri
+  pages/               # Üç sayfa bileşeni ve sayfa düzenleri
   i18n/                # Altı dilin çevirileri ve dil bağlamı
   utils/links.ts       # İsteğe bağlı bağlantıların biçim kontrolü
   App.module.css       # Yerel stil sınıfları, tasarım değişkenleri ve responsive kurallar
 public/favicon.svg     # YK site simgesi
 index.html             # Anasayfa girişi
 projects/index.html    # Projelerim girişi
-about/index.html       # Hakkımda girişi
 contact/index.html     # İletişim girişi
 ```
 
 Mobil menü yerel bir düğmeyle açılır; `Escape` ile kapanır ve odak düğmeye döner. Money Guard ve Cinemania katkıları, tarayıcının yerel `details` / `summary` bileşeniyle açılır. Klavye için görünür odak, içeriğe atlama bağlantısı ve azaltılmış hareket tercihi desteklenir.
+
+## Kaydırmalı anlatım bölümü
+
+Anasayfada giriş ile projeler arasındaki `ScrollStory`, kullanıcının onayladığı dört sahneyi altı dilde gösterir. Dördüncü sahnede ayrı SVG katmanındaki altın nokta, görselin ışık izini kaydırmayla takip eder. Görsel klasörü, hareket davranışı ve ekleme adımları: [Görünenin arkasında](docs/scroll-story.md).
 
 ## İçerik sınırları
 
