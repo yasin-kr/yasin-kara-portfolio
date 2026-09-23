@@ -3,7 +3,7 @@ import type { Translation } from "../types";
 const tr: Translation = {
   theme: { lightMode: "Açık tema" },
   contactForm: {
-  "title": "Mesaj oluşturun.",
+  "title": "Mesaj oluşturun",
   "name": "Ad-Soyad",
   "email": "E-posta adresiniz",
   "subject": "Konu",

@@ -383,6 +383,11 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 - Vite, npm ci, npm run build ve dist ayarları `vercel.json` içinde tanımlandı. Üç HTML girişini korumak için SPA rewrite eklenmedi; adreslerde trailing slash kullanılır.
 - Yerel Vercel bağlantısı/CLI ve bağlı Vercel hesabı bulunmadığından gerçek yayın henüz başlatılmadı. GitHub reposunun Vercel panelinden içe aktarılması gerekir. Form gönderimi backend bağlanana kadar pasiftir.
 
+## İletişim başlığı düzeltmesi
+
+- Türkçe form başlığı “Mesaj oluşturun” olarak noktasız güncellendi. Typecheck geçti; bu noktalama değişikliği için build/lint yeniden çalıştırılmadı.
+- Kullanıcı backend kurulumunu yarına erteledi; gönderim pasif kalır.
+
 ## Kullanıcıdan beklenen içerikler
 
 1. GitHub ve LinkedIn profil adresleri; iletişim e-postası `theyasin@icloud.com` olarak eklendi.
