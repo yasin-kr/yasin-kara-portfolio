@@ -29,7 +29,7 @@ npm run preview
 ## Teknoloji ve tasarım
 
 - React, TypeScript ve Vite; CSS Modules.
-- Koyu antrasit zemin, sıcak kırık beyaz yazı ve ölçülü şampanya vurgular.
+- Koyu lacivert zemin (#000d15, #05172f), arduvaz/antrasit/gri yardımcı yüzeyler (#2d3c4c, #2f2f2b, #525453), kırık beyaz yazı ve şampanya vurgular.
 - Fontsource paketlerinden yerel sunulan Manrope ve Cormorant Garamond yazı tipleri; Türkçe karakter desteği.
 - Vite çok sayfalı yapı (MPA): dört gerçek HTML girişi, ortak React bileşenleri ve standart sayfa bağlantıları. Ek router, backend veya mesaj gönderme servisi yoktur.
 

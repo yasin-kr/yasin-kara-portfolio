@@ -31,7 +31,7 @@ JavaScript ekip projesi; Team Lead. Vite, Axios ve TMDB kullanıldı. Weekly Tre
 
 ## Tasarım kararları
 
-- Koyu antrasit ana zemin, sıcak kırık beyaz metin, ölçülü şampanya/açık altın vurgular.
+- Kullanıcının seçtiği koyu lacivert (#000d15, #05172f) ana zeminler; arduvaz (#2d3c4c), antrasit (#2f2f2b) ve gri (#525453) yardımcı yüzeyler; sıcak kırık beyaz metin ve şampanya vurgular.
 - Tipografinin öne çıktığı giriş, geniş boşluklar, ince ayırıcılar ve büyük ekranda kontrollü asimetri.
 - Fontsource üzerinden yerel Manrope ve Cormorant Garamond; en fazla iki yazı tipi ailesi ve Türkçe karakter desteği.
 - Projelere geniş, tipografik kapaklar. Bunlar uygulama ekran görüntüsü olarak sunulmaz.
@@ -150,6 +150,28 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 - Build, lint ve typecheck başarılı. Dört sayfa × üç dil (İngilizce, Arapça, Almanca) × üç genişlik (1440, 390, 320 px) için 36 üretim ekran görüntüsü önceki sürümle birebir aynı; yatay taşma yok.
 - Yerel karşılaştırma betiği `.verification/verify-modules.mjs`; sonuçlar `.verification/modules-before.json` ve `.verification/modules-after.json` içinde, Git kapsamı dışındadır.
 - Altı dil × dört sayfa × masaüstü/mobil için 408 tarayıcı kontrolü başarılı: dil kalıcılığı, mobil menü, doğrudan açılış, geri/ileri gezinme, sabit header, proje bağlantıları ve seçili senaryolarda axe erişilebilirlik taramaları geçti. Tarayıcı hatası yok. Modül sınıflarına uyarlanan yerel betik `.verification/verify-module-pages.mjs`, rapor `.verification/modules-pages-report.json`.
+
+## 23 Eylül 2026 — Header menü hizalaması
+
+- Masaüstünde gezinme menüsü eşit yan sütunlarla header'ın ortasına alındı; dil seçici sağda kalır. Menü arkasına %6 opaklıkta şampanya tonu ve 12 px köşe yuvarlama eklendi. Mobilde açılan menü bağlantıları da ortalandı.
+- Build, lint ve typecheck başarılı. Chrome'da altı dil × beş genişlik (1440, 768, 701, 390, 320 px) için 30 senaryoda ortalama, yatay taşma ve dil seçiciyle çakışma kontrolleri geçti.
+
+## 23 Eylül 2026 — Oval logo ve şampanya menü
+
+- YK logosu masaüstünde 29 px, mobilde 26 px yapıldı; oval arka plan eklendi. Logo ve gezinme menüsü arka planı, Hero'daki Kara yazısıyla aynı `--color-accent` rengini kullanır.
+- Açık arka planda okunabilirlik için logo ve menü yazıları antrasit yapıldı; hover koyu kahverengi, menü alt çizgisi metin rengindedir. Aktif menü kalın yazıyla belirtilir; klavye odağı koyu çerçeveyle görünür.
+- Build, lint ve typecheck başarılı. Altı dil ve beş genişlikte 30 header hizalama/taşma kontrolü geçti; masaüstü ekran görüntüsü incelendi.
+
+## 23 Eylül 2026 — Kullanıcı renk paleti
+
+- Ana zemin #000d15, bölüm yüzeyi #05172f, çizgiler ve Money Guard kapağı #2d3c4c, Cinemania kapağı #2f2f2b, TaskPro kapağı #525453 yapıldı. Dil menüsü hover yüzeyi de yeni palete uyarlandı.
+- Kırık beyaz metinler ve kullanıcının önceki isteğindeki şampanya logo/menü vurgusu korundu. TaskPro kapağında koyu zemin için açık yazı ve çizgi kullanıldı. Dört HTML girişinin theme-color değeri ve favicon zemini güncellendi.
+- Build, lint ve typecheck başarılı. Dört sayfanın masaüstü/mobil toplam sekiz axe WCAG A/AA taramasında ihlal bulunmadı; mobil görünüm ekran görüntüsünden incelendi.
+
+## 23 Eylül 2026 — Ortak iki tonlu sayfa düzeni
+
+- Dört sayfanın tam genişlikteki ana içerik alanına #05172f arka plan uygulandı. Header ve footer #000d15 koyu zeminde kalır; Hakkımda örneğindeki açık orta alan/koyu üst-alt düzeni tüm sayfalara yayıldı.
+- Build, lint ve typecheck başarılı. Dört sayfa × masaüstü/mobil için sekiz axe WCAG A/AA taraması ihlal bildirmedi.
 
 ## Kullanıcıdan beklenen içerikler
 
