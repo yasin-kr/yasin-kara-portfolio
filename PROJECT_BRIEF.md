@@ -17,6 +17,10 @@
 
 ## Doğrulanmış projeler
 
+### TravelTrucks
+
+Kullanıcının sağladığı README'ye göre karavanları inceleme, filtreleme, favorilere ekleme ve rezervasyon için React frontend uygulaması. React, Redux Toolkit, React Router, Axios, CSS ve Vite kullanır. Kataloğa yönlendiren anasayfa, backend üzerinden filtreleme ve sayfalama, kalıcı favoriler; galeri, özellikler, araç bilgileri, değerlendirmeler ve rezervasyon formu içeren detay sayfası ile yükleme, boş sonuç ve hata durumları bulunur. Yazar: Yasin Kara. Ekip büyüklüğü veya başarı metriği belirtilmedi. Görsel: `public/images/projects/traveltrucks.jpeg` (1800 × 1125). Canlı site ve repository adresleri henüz sağlanmadı.
+
 ### TaskPro
 
 Rol: Full Stack Developer, ekip projesi. React, Redux Toolkit, Node.js, Express.js, MongoDB, Mongoose, JWT, Swagger ve Vite. Board/column CRUD akışları, dashboard API ve kart entegrasyonu, etiket filtreleri, tema değiştirme ve görev çalışma alanlarının kalıcılığı üzerinde çalıştı.
@@ -388,13 +392,21 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 - Türkçe form başlığı “Mesaj oluşturun” olarak noktasız güncellendi. Typecheck geçti; bu noktalama değişikliği için build/lint yeniden çalıştırılmadı.
 - Kullanıcı backend kurulumunu yarına erteledi; gönderim pasif kalır.
 
+## 19 Ekim 2026 — TravelTrucks projesi
+
+- TravelTrucks, anasayfadaki proje kartlarının ve Projeler sayfasının ilk sırasına eklendi. Mevcut projelerin kendi aralarındaki sırası korundu; merkezi sıra numaraları 01–04 olarak güncellendi.
+- Kullanıcının görseli gerçek ölçüleriyle bağlandı. Canlı bağlantısı olmayan proje görseline de doğal en-boy oranı ve mevcut yuvarlatılmış köşe düzeni uygulandı.
+- README'deki bilgiler mevcut rol, kısa özet, teknoloji listesi ve iki maddelik katkı düzenine uyarlandı. İngilizce ortak proje verisini kullanan çeviri ve diğer beş dil tamamlandı. Canlı site veya repository bağlantısı uydurulmadı; bu bağlantılar sağlanınca eklenebilir.
+- `npm.cmd run build`, `npm.cmd run lint` ve `npm.cmd run typecheck` başarılı. Bağımlılıklar kilit dosyasından kuruldu; Vite derlemesi Windows alt süreç kısıtlaması nedeniyle izinli ortamda yeniden çalıştırılarak tamamlandı.
+- Üretim önizlemesinde 1440 px masaüstü ve 390 px mobil genişliklerinde anasayfa/projeler sırası, görsel yüklenmesi ve yatay taşma kontrol edildi. İngilizce masaüstü ve Türkçe mobil proje görünümü ile Türkçe anasayfa kartları incelendi. Katkı alanının Enter ile açılması ve anasayfa kartının `/projects/#traveltrucks` hedefine ulaşması doğrulandı; gözlenen tarayıcı kayıtlarında hata/uyarı yok. Kapsamlı altı dilli regresyon ve axe taraması yeniden çalıştırılmadı.
+
 ## Kullanıcıdan beklenen içerikler
 
 1. GitHub ve LinkedIn profil adresleri; iletişim e-postası `theyasin@icloud.com` olarak eklendi.
 2. Paylaşılacak gerçek CV dosyası veya erişilebilir bağlantısı.
-3. Üç proje için repository adresleri; canlı site adresleri eklendi.
-4. Varsa proje ekran görüntülerinin sonraki revizeleri ve tercih edilen görsel sıralaması; üç projenin ilk görselleri eklendi.
-5. Varsa proje bilgilerindeki sonraki güncellemeler; üç projenin teknoloji ve katkıları CV bilgilerine göre tamamlandı.
+3. Dört proje için repository adresleri ve TravelTrucks canlı site adresi; TaskPro, Money Guard ve Cinemania canlı site adresleri eklendi.
+4. Varsa proje ekran görüntülerinin sonraki revizeleri ve tercih edilen görsel sıralaması; dört projenin görselleri eklendi, TravelTrucks ilk sırada.
+5. Varsa proje bilgilerindeki sonraki güncellemeler; ilk üç projenin teknoloji ve katkıları CV bilgilerine, TravelTrucks bilgileri kullanıcının README'sine göre tamamlandı.
 6. Yayın için gerçek alan adı; sosyal paylaşım görseli isteniyorsa kullanılacak içerik.
 
 Eksik içerikler ilk tasarımın geliştirilmesini engellemez. Yaş, maaş, özel hayat, kullanıcı sayısı, gelir, müşteri logosu, referans veya uydurma başarı iddiası eklenmez.

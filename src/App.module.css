@@ -589,11 +589,16 @@ h2 em,
   box-shadow: none;
   transition: border-color 200ms ease, box-shadow 200ms ease;
 }
+.project > .project-image,
 .project-visual-link .project-image {
   aspect-ratio: auto;
   border-radius: inherit;
   background: transparent;
 }
+.project > .project-image {
+  border-radius: 22px;
+}
+.project > .project-image img,
 .project-visual-link img {
   display: block;
   height: auto;

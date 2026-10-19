@@ -51,6 +51,11 @@ const tr: Translation = {
     },
   },
   projects: {
+  "traveltrucks": {
+    "role": "Frontend Geliştirici",
+    "summary": "Karavanları incelemek, filtrelemek, favorilere eklemek ve rezervasyon yapmak için React ile geliştirilen bir frontend uygulaması.",
+    "contributions": ["Kataloğa yönlendiren anasayfa; backend üzerinden filtreleme, sayfalama ve kalıcı favori karavan listesi.","Galeri, özellikler, araç bilgileri, değerlendirmeler ve rezervasyon formu içeren karavan detayları; yükleme, boş sonuç ve hata durumları."]
+  },
   "taskpro": {
     "role": "Full Stack Geliştirici",
     "summary": "Full Stack geliştirme kapsamında tamamlanan bir ekip projesi.",

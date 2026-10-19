@@ -51,6 +51,11 @@ const es: Translation = {
     },
   },
   projects: {
+  "traveltrucks": {
+    "role": "Desarrollador Frontend",
+    "summary": "Un frontend en React para explorar, filtrar, guardar como favoritas y reservar furgonetas camper.",
+    "contributions": ["Página de inicio con una llamada a explorar el catálogo; filtrado en el backend, paginación y favoritos persistentes.","Detalles de las furgonetas con galería, características, datos del vehículo, reseñas y formulario de reserva; estados de carga, sin resultados y de error."]
+  },
   "taskpro": {
     "role": "Desarrollador Full Stack",
     "summary": "Un proyecto en equipo con responsabilidades de desarrollo Full Stack.",

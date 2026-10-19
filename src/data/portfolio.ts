@@ -101,9 +101,29 @@ export const profile: Profile = {
 
 export const projects: Project[] = [
   {
+    id: "traveltrucks",
+    number: "01",
+    name: "TravelTrucks",
+    role: "Frontend Developer",
+    summary: "A React frontend for browsing, filtering, favoriting, and booking campervans.",
+    contributions: [
+      "Home page with a catalog call to action; backend filtering, pagination, and persistent favorite campers.",
+      "Camper details with a gallery, features, vehicle details, reviews, and a booking form; loading, empty, and error states.",
+    ],
+    technologies: ["React", "Redux Toolkit", "React Router", "Axios", "CSS", "Vite"],
+    cover: "taskpro",
+    coverTitle: ["Travel", "Trucks"],
+    image: {
+      src: "/images/projects/traveltrucks.jpeg",
+      alt: "TravelTrucks",
+      width: 1800,
+      height: 1125,
+    },
+  },
+  {
     id: "taskpro",
     liveUrl: "https://goit-react-nodejs-taskpro-1.onrender.com/",
-    number: "01",
+    number: "02",
     name: "TaskPro",
     role: "Full Stack Developer",
     summary: "A team project with Full Stack development responsibilities.",
@@ -121,7 +141,7 @@ export const projects: Project[] = [
   {
     id: "money-guard",
     liveUrl: "https://money-guard-client.vercel.app/login",
-    number: "02",
+    number: "03",
     name: "Money Guard",
     role: "Team Lead",
     summary: "A React and Redux project developed by a team of six.",
@@ -139,7 +159,7 @@ export const projects: Project[] = [
   {
     id: "cinemania",
     liveUrl: "https://yasin-kr.github.io/cinemania/",
-    number: "03",
+    number: "04",
     name: "Cinemania",
     role: "Team Lead",
     summary: "A JavaScript and TMDB project developed by a team of five.",

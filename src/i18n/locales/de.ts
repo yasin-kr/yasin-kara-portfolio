@@ -51,6 +51,11 @@ const de: Translation = {
     },
   },
   projects: {
+  "traveltrucks": {
+    "role": "Frontend-Entwickler",
+    "summary": "Ein React-Frontend zum Durchsuchen, Filtern, Favorisieren und Buchen von Campern.",
+    "contributions": ["Startseite mit Verweis auf den Katalog; serverseitige Filterung, Paginierung und dauerhaft gespeicherte Camper-Favoriten.","Camper-Detailseite mit Galerie, Ausstattung, Fahrzeugdaten, Bewertungen und Buchungsformular; Lade-, Leer- und Fehlerzustände."]
+  },
   "taskpro": {
     "role": "Full Stack Developer",
     "summary": "Ein Teamprojekt mit Aufgaben in der Full Stack Entwicklung.",
