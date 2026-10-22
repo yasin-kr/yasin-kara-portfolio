@@ -102,6 +102,7 @@ export const profile: Profile = {
 export const projects: Project[] = [
   {
     id: "traveltrucks",
+    liveUrl: "https://travel-trucks-gold-one.vercel.app/",
     number: "01",
     name: "TravelTrucks",
     role: "Frontend Developer",

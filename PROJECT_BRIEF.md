@@ -19,7 +19,7 @@
 
 ### TravelTrucks
 
-Kullanıcının sağladığı README'ye göre karavanları inceleme, filtreleme, favorilere ekleme ve rezervasyon için React frontend uygulaması. React, Redux Toolkit, React Router, Axios, CSS ve Vite kullanır. Kataloğa yönlendiren anasayfa, backend üzerinden filtreleme ve sayfalama, kalıcı favoriler; galeri, özellikler, araç bilgileri, değerlendirmeler ve rezervasyon formu içeren detay sayfası ile yükleme, boş sonuç ve hata durumları bulunur. Yazar: Yasin Kara. Ekip büyüklüğü veya başarı metriği belirtilmedi. Görsel: `public/images/projects/traveltrucks.jpeg` (1800 × 1125). Canlı site ve repository adresleri henüz sağlanmadı.
+Kullanıcının sağladığı README'ye göre karavanları inceleme, filtreleme, favorilere ekleme ve rezervasyon için React frontend uygulaması. React, Redux Toolkit, React Router, Axios, CSS ve Vite kullanır. Kataloğa yönlendiren anasayfa, backend üzerinden filtreleme ve sayfalama, kalıcı favoriler; galeri, özellikler, araç bilgileri, değerlendirmeler ve rezervasyon formu içeren detay sayfası ile yükleme, boş sonuç ve hata durumları bulunur. Yazar: Yasin Kara. Ekip büyüklüğü veya başarı metriği belirtilmedi. Görsel: `public/images/projects/traveltrucks.jpeg` (1800 × 1125). Canlı site: `https://travel-trucks-gold-one.vercel.app/`. Repository adresi henüz sağlanmadı.
 
 ### TaskPro
 
@@ -400,11 +400,16 @@ Tarayıcı doğrulaması 15 Eylül 2026'da yerel Chrome'un başsız modunda, Pla
 - `npm.cmd run build`, `npm.cmd run lint` ve `npm.cmd run typecheck` başarılı. Bağımlılıklar kilit dosyasından kuruldu; Vite derlemesi Windows alt süreç kısıtlaması nedeniyle izinli ortamda yeniden çalıştırılarak tamamlandı.
 - Üretim önizlemesinde 1440 px masaüstü ve 390 px mobil genişliklerinde anasayfa/projeler sırası, görsel yüklenmesi ve yatay taşma kontrol edildi. İngilizce masaüstü ve Türkçe mobil proje görünümü ile Türkçe anasayfa kartları incelendi. Katkı alanının Enter ile açılması ve anasayfa kartının `/projects/#traveltrucks` hedefine ulaşması doğrulandı; gözlenen tarayıcı kayıtlarında hata/uyarı yok. Kapsamlı altı dilli regresyon ve axe taraması yeniden çalıştırılmadı.
 
+## 22 Ekim 2026 — TravelTrucks canlı bağlantısı ve hover
+
+- Kullanıcının sağladığı `https://travel-trucks-gold-one.vercel.app/` adresi merkezi `liveUrl` alanına eklendi. TravelTrucks görseli diğer projelerle aynı bağlantı bileşenini kullanarak hover/klavye odağında %5,5 büyüme ve basma efektini kazandı. Görsel ve mevcut altı dilli canlı site düğmesi adresi güvenli yeni sekmede açar.
+- `npm.cmd run build`, `npm.cmd run lint` ve `npm.cmd run typecheck` başarılı. Üretim önizlemesinde iki bağlantının adresi, `_blank` hedefi ve `noopener noreferrer` özellikleri doğrulandı. Masaüstünde klavye odağında 1,055 ölçeği, 1482 px masaüstü ve 390 px mobil görünümde görsel yüklenmesi ve yatay taşma olmaması kontrol edildi. Hover ve basma kuralları diğer projelerle ortak CSS üzerinden doğrulandı; harici sitenin işlevleri test edilmedi.
+
 ## Kullanıcıdan beklenen içerikler
 
 1. GitHub ve LinkedIn profil adresleri; iletişim e-postası `theyasin@icloud.com` olarak eklendi.
 2. Paylaşılacak gerçek CV dosyası veya erişilebilir bağlantısı.
-3. Dört proje için repository adresleri ve TravelTrucks canlı site adresi; TaskPro, Money Guard ve Cinemania canlı site adresleri eklendi.
+3. Dört proje için repository adresleri; dört projenin canlı site adresleri eklendi.
 4. Varsa proje ekran görüntülerinin sonraki revizeleri ve tercih edilen görsel sıralaması; dört projenin görselleri eklendi, TravelTrucks ilk sırada.
 5. Varsa proje bilgilerindeki sonraki güncellemeler; ilk üç projenin teknoloji ve katkıları CV bilgilerine, TravelTrucks bilgileri kullanıcının README'sine göre tamamlandı.
 6. Yayın için gerçek alan adı; sosyal paylaşım görseli isteniyorsa kullanılacak içerik.
